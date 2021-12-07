@@ -10,10 +10,17 @@ class Form extends Component {
 
     handleChange = (event) => {
         const {name, value} = event.target
-
         this.setState({
             [name]: value,
         })
+    }
+
+    handleKeypress = e => {
+        if (e.keyCode === 13){
+            this.submitForm()
+            console.log("enter pressed")
+        }
+        console.log("key_press")
     }
 
     submitForm = () => {
@@ -32,22 +39,22 @@ class Form extends Component {
                     name="name"
                     id="name"
                     value={name}
-                    onChange={this.handleChange}/>
+                    onChange={this.handleChange}
+                    onKeyDown={this.handleKeypress}/>
                 <label htmlFor="job">Job</label>
                 <input
                     type="text"
                     name="job"
                     id="job"
                     value={job}
-                    onChange={this.handleChange}/>
+                    onChange={this.handleChange}
+                    onKeyDown={this.handleKeypress}/>
                 <input
                     type="button"
-                    value="submit"
-                    onClick={this.submitForm}
-                />
+                    value="Submit"
+                    onClick={this.submitForm} />
             </form>
         )
     }
 }
-
 export default Form
