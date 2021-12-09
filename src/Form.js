@@ -4,6 +4,7 @@ class Form extends Component {
     initialState = {
         name: '',
         job: '',
+        imgurl:'',
     }
 
     state = this.initialState
@@ -12,6 +13,14 @@ class Form extends Component {
         const {name, value} = event.target
         this.setState({
             [name]: value,
+        })
+    }
+
+    handleImgChange = (event) => {
+        const imgurl = event.target.files[0]
+        console.log(imgurl)
+        this.setState({
+            imgurl: imgurl,
         })
     }
 
@@ -49,6 +58,9 @@ class Form extends Component {
                     value={job}
                     onChange={this.handleChange}
                     onKeyDown={this.handleKeypress}/>
+                <input
+                    accept="image/*" type="file"
+                    onChange={this.handleImgChange}/>
                 <input
                     type="button"
                     value="Submit"

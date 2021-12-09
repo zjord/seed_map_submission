@@ -6,6 +6,7 @@ const TableHeader = () => {
         <tr>
             <th>Name</th>
             <th>Job</th>
+            <th>Image</th>
             <th>Delete row</th>
         </tr>
         </thead>
@@ -17,6 +18,7 @@ const TableBody = (props) => {
             <tr key={index}>
                 <td>{row.name}</td>
                 <td>{row.job}</td>
+                <td><img src={URL.createObjectURL(row.imgurl)} alt="ImgSubmission" height={100}/></td>
                 <td>
                     <button onClick={() => props.removeCharacter(index)}>X</button>
                 </td>
