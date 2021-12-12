@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c961eb01-5fdf-426b-a6dc-6487e1e03a4a" name="Changes" comment="Added some comments">
+    <list default="true" id="c961eb01-5fdf-426b-a6dc-6487e1e03a4a" name="Changes" comment="fulham_pubs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-leaflet-map/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-leaflet-map/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-leaflet-map/src/data/pubs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-leaflet-map/src/data/fulham_pubs.json" beforeDir="false" afterPath="$PROJECT_DIR$/react-leaflet-map/src/data/fulham_pubs.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +53,7 @@
       <option name="presentableId" value="Default" />
       <updated>1639224050031</updated>
       <workItem from="1639224053156" duration="9231000" />
-      <workItem from="1639310709935" duration="5183000" />
+      <workItem from="1639310709935" duration="6465000" />
     </task>
     <task id="LOCAL-00001" summary="Leaflet App">
       <created>1639231862890</created>
@@ -70,7 +69,21 @@
       <option name="project" value="LOCAL" />
       <updated>1639311486917</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fulham_pubs">
+      <created>1639320359280</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1639320359280</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fulham_pubs">
+      <created>1639320383329</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1639320383329</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -91,6 +104,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Leaflet App" />
     <MESSAGE value="Added some comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added some comments" />
+    <MESSAGE value="fulham_pubs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fulham_pubs" />
   </component>
 </project>

@@ -181,22 +181,6 @@
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  { }
-    },
-    "properties": {
-    "fsa_ID":114200,
-    "name":"Blue Boat",
-    "address":"The Blue Boat, Distillery Wharf, Parr's Way, London",
-    "postcode":"W6 9GD",
-    "easting":622675,
-    "northing":-5527598,
-    "authority":"Hammersmith and Fulham"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
        "coordinates":  [ -0.194966,51.480612 ]
     },
     "properties": {
@@ -638,22 +622,6 @@
     "postcode":"SW6 5HP",
     "easting":524629,
     "northing":176530,
-    "authority":"Hammersmith and Fulham"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-       "type": "Point",
-       "coordinates":  { }
-    },
-    "properties": {
-    "fsa_ID":114900,
-    "name":"Little Moons",
-    "address":"Unit K1208, Westfield London Shopping Centre, Ariel Way, London",
-    "postcode":"W12 7HT",
-    "easting":622675,
-    "northing":-5527598,
     "authority":"Hammersmith and Fulham"
     }
   },
