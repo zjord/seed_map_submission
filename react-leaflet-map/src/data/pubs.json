@@ -1,0 +1,1574 @@
+{
+   "type": "FeatureCollection",
+
+   "features": [
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.036312,0.727924 ]
+    },
+    "properties": {
+    "fsa_ID":24,
+    "Name":"Angel Inn",
+    "Address":"43 Friars Street, SUDBURY, Suffolk",
+    "postcode":"CO10 2AG",
+    "Easting":587207,
+    "Northing":241058,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 51.958698,1.057832 ]
+    },
+    "properties": {
+    "fsa_ID":33,
+    "Name":"Ark Bar Restaurant",
+    "Address":"Ark Bar And Restaurant, Cattawade Street, Brantham, MANNINGTREE",
+    "postcode":"CO11 1RH",
+    "Easting":610194,
+    "Northing":233329,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.038685,0.730226 ]
+    },
+    "properties": {
+    "fsa_ID":60,
+    "Name":"Black Boy",
+    "Address":"Black Boy Hotel, 7 Market Hill, SUDBURY, Suffolk",
+    "postcode":"CO10 2EA",
+    "Easting":587356,
+    "Northing":241327,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 51.966211,0.972091 ]
+    },
+    "properties": {
+    "fsa_ID":61,
+    "Name":"Black Horse",
+    "Address":"Lower Street, Stratford St Mary, COLCHESTER, Essex",
+    "postcode":"CO7 6JS",
+    "Easting":604270,
+    "Northing":233920,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.102815,0.666893 ]
+    },
+    "properties": {
+    "fsa_ID":62,
+    "Name":"Black Lion",
+    "Address":"Lion Road, Glemsford, SUDBURY, Suffolk",
+    "postcode":"CO10 7RF",
+    "Easting":582750,
+    "Northing":248298,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 51.956771,1.268376 ]
+    },
+    "properties": {
+    "fsa_ID":83,
+    "Name":"Bristol Arms",
+    "Address":"Bristol Hill, Shotley, IPSWICH, Suffolk",
+    "postcode":"IP9 1PU",
+    "Easting":624667,
+    "Northing":233744,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 51.996361,1.213605 ]
+    },
+    "properties": {
+    "fsa_ID":98,
+    "Name":"Butt and Oyster Inn",
+    "Address":"Pin Mill Road, Chelmondiston, IPSWICH, Suffolk",
+    "postcode":"IP9 1JW",
+    "Easting":620709,
+    "Northing":237978,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.037903,0.732687 ]
+    },
+    "properties": {
+    "fsa_ID":108,
+    "Name":"Caffeine Lounge",
+    "Address":"14 Borehamgate Shopping Precinct, King Street, SUDBURY, Suffolk",
+    "postcode":"CO10 2ED",
+    "Easting":587527,
+    "Northing":241247,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 51.978282,1.019392 ]
+    },
+    "properties": {
+    "fsa_ID":122,
+    "Name":"Carriers Arms",
+    "Address":"Heath Road, East Bergholt, COLCHESTER, Essex",
+    "postcode":"CO7 6RA",
+    "Easting":607463,
+    "Northing":235397,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.077065,0.71663 ]
+    },
+    "properties": {
+    "fsa_ID":155,
+    "Name":"Cock And Bell",
+    "Address":"Hall Street, Long Melford, SUDBURY, Suffolk",
+    "postcode":"CO10 9JR",
+    "Easting":586263,
+    "Northing":245560,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 51.983351,1.158283 ]
+    },
+    "properties": {
+    "fsa_ID":166,
+    "Name":"Compasses Inn",
+    "Address":"Ipswich Road, Holbrook, IPSWICH, Suffolk",
+    "postcode":"IP9 2QR",
+    "Easting":616975,
+    "Northing":236365,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 51.956682,1.057899 ]
+    },
+    "properties": {
+    "fsa_ID":198,
+    "Name":"Crown Inn",
+    "Address":"Cattawade Street, Brantham, MANNINGTREE, Essex",
+    "postcode":"CO11 1RE",
+    "Easting":610208,
+    "Northing":233105,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.041752,0.744457 ]
+    },
+    "properties": {
+    "fsa_ID":209,
+    "Name":"Delphi Club",
+    "Address":"Delphi Diesel Systems Ltd, Newton Road, SUDBURY, Suffolk",
+    "postcode":"CO10 2RR",
+    "Easting":588318,
+    "Northing":241705,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.028751,0.743908 ]
+    },
+    "properties": {
+    "fsa_ID":254,
+    "Name":"Five Bells Inn",
+    "Address":"63 Bures Road, Great Cornard, SUDBURY, Suffolk",
+    "postcode":"CO10 0HU",
+    "Easting":588335,
+    "Northing":240258,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.037694,0.855736 ]
+    },
+    "properties": {
+    "fsa_ID":262,
+    "Name":"Fox and Hounds",
+    "Address":"Church Street, Groton, SUDBURY, Suffolk",
+    "postcode":"CO10 5ED",
+    "Easting":595966,
+    "Northing":241547,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 51.968086,1.114167 ]
+    },
+    "properties": {
+    "fsa_ID":272,
+    "Name":"Gardeners Arms",
+    "Address":"Manningtree Road, Stutton, IPSWICH, Suffolk",
+    "postcode":"IP9 2TG",
+    "Easting":614019,
+    "Northing":234537,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.097693,0.667931 ]
+    },
+    "properties": {
+    "fsa_ID":281,
+    "Name":"Glemsford Social Club",
+    "Address":"25-27 Hunts Hill, Glemsford, SUDBURY, Suffolk",
+    "postcode":"CO10 7RP",
+    "Easting":582842,
+    "Northing":247729,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 51.975506,1.053837 ]
+    },
+    "properties": {
+    "fsa_ID":283,
+    "Name":"Grange Restaurant and Bar",
+    "Address":"The Grange Country Park, Straight Road, East Bergholt, COLCHESTER",
+    "postcode":"CO7 6UX",
+    "Easting":609841,
+    "Northing":235186,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.040323,0.73088 ]
+    },
+    "properties": {
+    "fsa_ID":291,
+    "Name":"Grover And Allen (J D Wetherspoon)",
+    "Address":"The Grover and Allen, 67-70 North Street, SUDBURY, Suffolk",
+    "postcode":"CO10 1RF",
+    "Easting":587393,
+    "Northing":241511,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.000502,0.848865 ]
+    },
+    "properties": {
+    "fsa_ID":305,
+    "Name":"Hare and Hounds",
+    "Address":"Harrow Street, Leavenheath, COLCHESTER, Essex",
+    "postcode":"CO6 4PW",
+    "Easting":595658,
+    "Northing":237394,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 51.978461,1.021866 ]
+    },
+    "properties": {
+    "fsa_ID":306,
+    "Name":"Hare And Hounds",
+    "Address":"Heath Road, East Bergholt, COLCHESTER, Essex",
+    "postcode":"CO7 6RL",
+    "Easting":607632,
+    "Northing":235424,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.087862,0.724191 ]
+    },
+    "properties": {
+    "fsa_ID":307,
+    "Name":"Hare Inn",
+    "Address":"High Street, Long Melford, SUDBURY, Suffolk",
+    "postcode":"CO10 9DF",
+    "Easting":586736,
+    "Northing":246780,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.04129,0.734118 ]
+    },
+    "properties": {
+    "fsa_ID":342,
+    "Name":"Horse and Groom",
+    "Address":"35 East Street, SUDBURY, Suffolk",
+    "postcode":"CO10 2TU",
+    "Easting":587611,
+    "Northing":241627,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.108245,0.90799 ]
+    },
+    "properties": {
+    "fsa_ID":395,
+    "Name":"Kings Head",
+    "Address":"132 High Street, Bildeston, IPSWICH, Suffolk",
+    "postcode":"IP7 7ED",
+    "Easting":599235,
+    "Northing":249535,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.027024,0.744328 ]
+    },
+    "properties": {
+    "fsa_ID":396,
+    "Name":"Kings Head Inn",
+    "Address":"115 Bures Road, Great Cornard, SUDBURY, Suffolk",
+    "postcode":"CO10 0JE",
+    "Easting":588371,
+    "Northing":240067,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.039381,0.731319 ]
+    },
+    "properties": {
+    "fsa_ID":420,
+    "Name":"Lipstick and Locks",
+    "Address":"3 North Street, SUDBURY, Suffolk",
+    "postcode":"CO10 1RB",
+    "Easting":587427,
+    "Northing":241408,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.041393,0.729677 ]
+    },
+    "properties": {
+    "fsa_ID":491,
+    "Name":"North Street Tavern",
+    "Address":"North Street Tavern, 66, North Street, SUDBURY, Suffolk",
+    "postcode":"CO10 1RE",
+    "Easting":587306,
+    "Northing":241627,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.030727,1.148689 ]
+    },
+    "properties": {
+    "fsa_ID":509,
+    "Name":"Oyster Reach Beefeater",
+    "Address":"Bourne Hill, Wherstead, IPSWICH, Suffolk",
+    "postcode":"IP2 8ND",
+    "Easting":616088,
+    "Northing":241605,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.169493,0.801282 ]
+    },
+    "properties": {
+    "fsa_ID":531,
+    "Name":"Plough And Fleece Inn",
+    "Address":"Great Green, Cockfield, BURY ST EDMUNDS, Suffolk",
+    "postcode":"IP30 0HJ",
+    "Easting":591666,
+    "Northing":256058,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.041098,0.728083 ]
+    },
+    "properties": {
+    "fsa_ID":545,
+    "Name":"Prince Of Wales",
+    "Address":"New Street, SUDBURY, Suffolk",
+    "postcode":"CO10 1JB",
+    "Easting":587198,
+    "Northing":241591,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.00829,1.019169 ]
+    },
+    "properties": {
+    "fsa_ID":552,
+    "Name":"Queens Head",
+    "Address":"The Row, Wenham Magna, COLCHESTER, Essex",
+    "postcode":"CO7 6PU",
+    "Easting":607309,
+    "Northing":238732,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.022268,0.95604 ]
+    },
+    "properties": {
+    "fsa_ID":553,
+    "Name":"Queens Head",
+    "Address":"The Street, Layham, IPSWICH, Suffolk",
+    "postcode":"IP7 5LZ",
+    "Easting":602914,
+    "Northing":240108,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 51.989187,1.206871 ]
+    },
+    "properties": {
+    "fsa_ID":559,
+    "Name":"Red Lion Inn",
+    "Address":"Main Road, Chelmondiston, IPSWICH, Suffolk",
+    "postcode":"IP9 1DX",
+    "Easting":620282,
+    "Northing":237160,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.080338,1.00088 ]
+    },
+    "properties": {
+    "fsa_ID":569,
+    "Name":"Rose and Crown",
+    "Address":"The Street, Elmsett, IPSWICH, Suffolk",
+    "postcode":"IP7 6PA",
+    "Easting":605723,
+    "Northing":246692,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.005746,1.197606 ]
+    },
+    "properties": {
+    "fsa_ID":571,
+    "Name":"Royal Harwich Yacht Club",
+    "Address":"Cat House Lane, Woolverstone, IPSWICH, Suffolk",
+    "postcode":"IP9 1AT",
+    "Easting":619565,
+    "Northing":238974,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.008164,0.816358 ]
+    },
+    "properties": {
+    "fsa_ID":597,
+    "Name":"Shoulder of Mutton",
+    "Address":"The Street, Assington, SUDBURY, Suffolk",
+    "postcode":"CO10 5LJ",
+    "Easting":593394,
+    "Northing":238159,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.037454,0.730107 ]
+    },
+    "properties": {
+    "fsa_ID":654,
+    "Name":"Sudbury Institute Club",
+    "Address":"54 Station Road, SUDBURY, Suffolk",
+    "postcode":"CO10 2SP",
+    "Easting":587352,
+    "Northing":241190,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 51.968224,0.972501 ]
+    },
+    "properties": {
+    "fsa_ID":670,
+    "Name":"Swan Inn",
+    "Address":"Lower Street, Stratford St Mary, COLCHESTER, Essex",
+    "postcode":"CO7 6JR",
+    "Easting":604289,
+    "Northing":234144,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 51.970645,0.873238 ]
+    },
+    "properties": {
+    "fsa_ID":689,
+    "Name":"The Anchor Inn",
+    "Address":"26 Court Street, Nayland with Wissington, COLCHESTER, Essex",
+    "postcode":"CO6 4JL",
+    "Easting":597461,
+    "Northing":234141,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 51.97039,0.979328 ]
+    },
+    "properties": {
+    "fsa_ID":690,
+    "Name":"The Anchor Inn",
+    "Address":"Anchor Inn, Upper Street, Stratford St Mary, COLCHESTER",
+    "postcode":"CO7 6LW",
+    "Easting":604748,
+    "Northing":234405,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.094425,0.668408 ]
+    },
+    "properties": {
+    "fsa_ID":691,
+    "Name":"The Angel Glemsford Ltd",
+    "Address":"Angel Inn, Egremont Street, Glemsford, SUDBURY",
+    "postcode":"CO10 7SA",
+    "Easting":582888,
+    "Northing":247368,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 51.990847,0.894023 ]
+    },
+    "properties": {
+    "fsa_ID":693,
+    "Name":"The Angel Inn",
+    "Address":"Polstead Street, Stoke by Nayland, COLCHESTER, Essex",
+    "postcode":"CO6 4SA",
+    "Easting":598799,
+    "Northing":236444,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.04283,0.727868 ]
+    },
+    "properties": {
+    "fsa_ID":697,
+    "Name":"The Bay Horse",
+    "Address":"61-65 Melford Road, SUDBURY, Suffolk",
+    "postcode":"CO10 1JS",
+    "Easting":587176,
+    "Northing":241782,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.050935,1.097901 ]
+    },
+    "properties": {
+    "fsa_ID":698,
+    "Name":"The Beagle",
+    "Address":"Hadleigh Road, Sproughton, IPSWICH, Suffolk",
+    "postcode":"IP8 3AR",
+    "Easting":612509,
+    "Northing":243701,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.059961,0.91629 ]
+    },
+    "properties": {
+    "fsa_ID":699,
+    "Name":"The Bell Inn",
+    "Address":"The Street, Kersey, IPSWICH, Suffolk",
+    "postcode":"IP7 6DY",
+    "Easting":600019,
+    "Northing":244189,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.028706,0.895637 ]
+    },
+    "properties": {
+    "fsa_ID":703,
+    "Name":"The Brewers Arms",
+    "Address":"Bower House Tye, Polstead, COLCHESTER, Essex",
+    "postcode":"CO6 5BZ",
+    "Easting":598743,
+    "Northing":240657,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.040169,0.732839 ]
+    },
+    "properties": {
+    "fsa_ID":704,
+    "Name":"The Brewery Tap",
+    "Address":"East Street, SUDBURY, Suffolk",
+    "postcode":"CO10 2TP",
+    "Easting":587528,
+    "Northing":241500,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.022208,0.746044 ]
+    },
+    "properties": {
+    "fsa_ID":710,
+    "Name":"The Brook",
+    "Address":"The Brook Inn, 241 Bures Road, Great Cornard, SUDBURY",
+    "postcode":"CO10 0JQ",
+    "Easting":588509,
+    "Northing":239536,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 51.968265,1.088246 ]
+    },
+    "properties": {
+    "fsa_ID":713,
+    "Name":"The Bull Inn",
+    "Address":"The Street, Brantham, MANNINGTREE, Essex",
+    "postcode":"CO11 1PN",
+    "Easting":612239,
+    "Northing":234481,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.143674,0.737318 ]
+    },
+    "properties": {
+    "fsa_ID":714,
+    "Name":"The Bush Inn",
+    "Address":"The Bush, The Street, Shimpling, BURY ST EDMUNDS",
+    "postcode":"IP29 4HU",
+    "Easting":587401,
+    "Northing":253020,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 51.990168,1.070262 ]
+    },
+    "properties": {
+    "fsa_ID":718,
+    "Name":"The Case Is Altered",
+    "Address":"Capel Road, Bentley, IPSWICH, Suffolk",
+    "postcode":"IP9 2DW",
+    "Easting":610900,
+    "Northing":236865,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.096944,0.827294 ]
+    },
+    "properties": {
+    "fsa_ID":721,
+    "Name":"The Cock",
+    "Address":"Lavenham Road, Brent Eleigh, SUDBURY, Suffolk",
+    "postcode":"CO10 9PB",
+    "Easting":593759,
+    "Northing":248059,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.045618,0.959156 ]
+    },
+    "properties": {
+    "fsa_ID":723,
+    "Name":"The Cock Inn",
+    "Address":"89 George Street, Hadleigh, IPSWICH, Suffolk",
+    "postcode":"IP7 5BP",
+    "Easting":603022,
+    "Northing":242713,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.094427,0.668408 ]
+    },
+    "properties": {
+    "fsa_ID":724,
+    "Name":"The Cock Inn",
+    "Address":"Egremont Street, Glemsford, SUDBURY, Suffolk",
+    "postcode":"CO10 7SA",
+    "Easting":582888,
+    "Northing":247368,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.007232,0.902119 ]
+    },
+    "properties": {
+    "fsa_ID":725,
+    "Name":"The Cock Inn",
+    "Address":"Polstead Green, Polstead, COLCHESTER, Essex",
+    "postcode":"CO6 5AL",
+    "Easting":599282,
+    "Northing":238287,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.038603,0.732496 ]
+    },
+    "properties": {
+    "fsa_ID":727,
+    "Name":"The Comfortable Cow",
+    "Address":"Unit 3, The Pied Cow, 12 King Street, SUDBURY, Suffolk",
+    "postcode":"CO10 2EB",
+    "Easting":587512,
+    "Northing":241324,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.071054,0.760512 ]
+    },
+    "properties": {
+    "fsa_ID":729,
+    "Name":"The Crown",
+    "Address":"High Street, Acton, SUDBURY, Suffolk",
+    "postcode":"CO10 0AT",
+    "Easting":589295,
+    "Northing":245005,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.140441,0.679212 ]
+    },
+    "properties": {
+    "fsa_ID":731,
+    "Name":"The Crown Inn",
+    "Address":"The Green, Hartest, BURY ST EDMUNDS, Suffolk",
+    "postcode":"IP29 4DH",
+    "Easting":583439,
+    "Northing":252512,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.028783,0.859893 ]
+    },
+    "properties": {
+    "fsa_ID":737,
+    "Name":"The Fleece",
+    "Address":"8 Broad Street, Boxford, SUDBURY, Suffolk",
+    "postcode":"CO10 5DX",
+    "Easting":596290,
+    "Northing":240568,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.043575,0.954179 ]
+    },
+    "properties": {
+    "fsa_ID":742,
+    "Name":"The George",
+    "Address":"52 High Street, Hadleigh, IPSWICH, Suffolk",
+    "postcode":"IP7 5AL",
+    "Easting":602690,
+    "Northing":242472,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.076134,0.716836 ]
+    },
+    "properties": {
+    "fsa_ID":743,
+    "Name":"The George & Dragon",
+    "Address":"The George and Dragon Public House, Hall Street, Long Melford, SUDBURY",
+    "postcode":"CO10 9JA",
+    "Easting":586282,
+    "Northing":245457,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.049431,1.044889 ]
+    },
+    "properties": {
+    "fsa_ID":744,
+    "Name":"The George Inn",
+    "Address":"George Street, Hintlesham, IPSWICH, Suffolk",
+    "postcode":"IP8 3NH",
+    "Easting":608882,
+    "Northing":243380,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.10844,0.795509 ]
+    },
+    "properties": {
+    "fsa_ID":746,
+    "Name":"The Greyhound",
+    "Address":"96 High Street, Lavenham, SUDBURY, Suffolk",
+    "postcode":"CO10 9PZ",
+    "Easting":591533,
+    "Northing":249254,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 51.968635,1.183065 ]
+    },
+    "properties": {
+    "fsa_ID":748,
+    "Name":"The Harkstead Bakers Arms Ltd",
+    "Address":"The Bakers Arms, The Street, Harkstead, IPSWICH",
+    "postcode":"IP9 1BT",
+    "Easting":618749,
+    "Northing":234804,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.14215,0.790064 ]
+    },
+    "properties": {
+    "fsa_ID":750,
+    "Name":"The Horseshoes Inn",
+    "Address":"Three Horseshoes, Stows Hill, Cockfield, BURY ST EDMUNDS",
+    "postcode":"IP30 0JB",
+    "Easting":591016,
+    "Northing":252988,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.044443,0.953624 ]
+    },
+    "properties": {
+    "fsa_ID":752,
+    "Name":"The Kings Head",
+    "Address":"90 High Street, Hadleigh, IPSWICH, Suffolk",
+    "postcode":"IP7 5EF",
+    "Easting":602648,
+    "Northing":242566,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 51.970665,1.127116 ]
+    },
+    "properties": {
+    "fsa_ID":753,
+    "Name":"The Kings Head",
+    "Address":"Kings Head, Manningtree Road, Stutton, IPSWICH",
+    "postcode":"IP9 2SW",
+    "Easting":614896,
+    "Northing":234862,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.066062,0.710986 ]
+    },
+    "properties": {
+    "fsa_ID":759,
+    "Name":"The Long Melford Inn",
+    "Address":"Station Road, Long Melford, SUDBURY, Suffolk",
+    "postcode":"CO10 9HN",
+    "Easting":585923,
+    "Northing":244322,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.095762,0.889729 ]
+    },
+    "properties": {
+    "fsa_ID":768,
+    "Name":"The Peacock Inn",
+    "Address":"37 The Street, Chelsworth, IPSWICH, Suffolk",
+    "postcode":"IP7 7HU",
+    "Easting":598040,
+    "Northing":248097,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.042841,0.954029 ]
+    },
+    "properties": {
+    "fsa_ID":772,
+    "Name":"The Ram",
+    "Address":"Market Place, Hadleigh, IPSWICH, Suffolk",
+    "postcode":"IP7 5DL",
+    "Easting":602683,
+    "Northing":242390,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.104021,0.909672 ]
+    },
+    "properties": {
+    "fsa_ID":773,
+    "Name":"The Red Lion",
+    "Address":"High Street, Bildeston, IPSWICH, Suffolk",
+    "postcode":"IP7 7EX",
+    "Easting":599369,
+    "Northing":249070,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 51.969177,1.251383 ]
+    },
+    "properties": {
+    "fsa_ID":774,
+    "Name":"The Rose Inn",
+    "Address":"The Street, Shotley, IPSWICH, Suffolk",
+    "postcode":"IP9 1NL",
+    "Easting":623437,
+    "Northing":235072,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.076991,0.718655 ]
+    },
+    "properties": {
+    "fsa_ID":776,
+    "Name":"The Royal British Legion",
+    "Address":"Cordell Road, Long Melford, SUDBURY, Suffolk",
+    "postcode":"CO10 9EB",
+    "Easting":586403,
+    "Northing":245557,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.043843,0.954984 ]
+    },
+    "properties": {
+    "fsa_ID":777,
+    "Name":"The Royal British Legion",
+    "Address":"George Street, Hadleigh, IPSWICH, Suffolk",
+    "postcode":"IP7 5BB",
+    "Easting":602744,
+    "Northing":242503,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 51.975311,1.05611 ]
+    },
+    "properties": {
+    "fsa_ID":778,
+    "Name":"The Royal Oak",
+    "Address":"Royal Oak, East End Lane, East Bergholt, COLCHESTER",
+    "postcode":"CO7 6XA",
+    "Easting":609998,
+    "Northing":235171,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.033264,0.790275 ]
+    },
+    "properties": {
+    "fsa_ID":781,
+    "Name":"The Saracens Head",
+    "Address":"Sudbury Road, Newton, SUDBURY, Suffolk",
+    "postcode":"CO10 0QJ",
+    "Easting":591496,
+    "Northing":240881,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.117918,0.838059 ]
+    },
+    "properties": {
+    "fsa_ID":783,
+    "Name":"The Six Bells",
+    "Address":"The Street, Preston St Mary, SUDBURY, Suffolk",
+    "postcode":"CO10 9NG",
+    "Easting":594405,
+    "Northing":250421,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.079464,0.718659 ]
+    },
+    "properties": {
+    "fsa_ID":791,
+    "Name":"The Swan",
+    "Address":"Hall Street, Long Melford, SUDBURY, Suffolk",
+    "postcode":"CO10 9JQ",
+    "Easting":586392,
+    "Northing":245831,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 51.985358,1.156531 ]
+    },
+    "properties": {
+    "fsa_ID":792,
+    "Name":"The Swan",
+    "Address":"Swan Inn, The Street, Holbrook, IPSWICH",
+    "postcode":"IP9 2PZ",
+    "Easting":616845,
+    "Northing":236583,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.155084,0.726146 ]
+    },
+    "properties": {
+    "fsa_ID":793,
+    "Name":"The Swan",
+    "Address":"The Street, Lawshall, BURY ST EDMUNDS, Suffolk",
+    "postcode":"IP29 4QA",
+    "Easting":586589,
+    "Northing":254260,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.091811,0.871471 ]
+    },
+    "properties": {
+    "fsa_ID":794,
+    "Name":"The Swan Inn",
+    "Address":"The Street, Monks Eleigh, IPSWICH, Suffolk",
+    "postcode":"IP7 7AU",
+    "Easting":596807,
+    "Northing":247608,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.039848,0.732251 ]
+    },
+    "properties": {
+    "fsa_ID":796,
+    "Name":"The Weavers Tap",
+    "Address":"Weavers Tap, East Street, SUDBURY, Suffolk",
+    "postcode":"CO10 2HX",
+    "Easting":587489,
+    "Northing":241462,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.059864,0.777825 ]
+    },
+    "properties": {
+    "fsa_ID":797,
+    "Name":"The White Horse",
+    "Address":"Lavenham Road, The Heath, Great Waldingfield, SUDBURY, Suffolk",
+    "postcode":"CO10 0SE",
+    "Easting":590529,
+    "Northing":243806,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.00155,1.055231 ]
+    },
+    "properties": {
+    "fsa_ID":798,
+    "Name":"The White Horse",
+    "Address":"London Road, Capel St Mary, IPSWICH, Suffolk",
+    "postcode":"IP9 2JR",
+    "Easting":609815,
+    "Northing":238086,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.001534,1.110762 ]
+    },
+    "properties": {
+    "fsa_ID":799,
+    "Name":"The White Horse Inn",
+    "Address":"White Horse, White Horse Hill, Tattingstone, IPSWICH",
+    "postcode":"IP9 2NU",
+    "Easting":613626,
+    "Northing":238246,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 51.971873,0.77561 ]
+    },
+    "properties": {
+    "fsa_ID":804,
+    "Name":"Three Horseshoes",
+    "Address":"Church Square, Bures St Mary, BURES, Suffolk",
+    "postcode":"CO8 5BS",
+    "Easting":590751,
+    "Northing":234016,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 51.96825,1.030381 ]
+    },
+    "properties": {
+    "fsa_ID":817,
+    "Name":"United Services Club",
+    "Address":"White Horse Road, East Bergholt, COLCHESTER, Essex",
+    "postcode":"CO7 6TU",
+    "Easting":608264,
+    "Northing":234312,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.039777,0.727638 ]
+    },
+    "properties": {
+    "fsa_ID":835,
+    "Name":"Waggon and Horses",
+    "Address":"Church Walk, SUDBURY, Suffolk",
+    "postcode":"CO10 1HJ",
+    "Easting":587173,
+    "Northing":241443,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 51.98959,1.099868 ]
+    },
+    "properties": {
+    "fsa_ID":846,
+    "Name":"Wheatsheaf Inn",
+    "Address":"Church Road, Tattingstone, IPSWICH, Suffolk",
+    "postcode":"IP9 2LY",
+    "Easting":612935,
+    "Northing":236887,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.103269,0.954386 ]
+    },
+    "properties": {
+    "fsa_ID":847,
+    "Name":"Wheelhouse",
+    "Address":"Whatfield Road, Nedging with Naughton, IPSWICH, Suffolk",
+    "postcode":"IP7 7BS",
+    "Easting":602435,
+    "Northing":249110,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.040207,0.730829 ]
+    },
+    "properties": {
+    "fsa_ID":849,
+    "Name":"White Horse",
+    "Address":"White Horse Hotel, North Street, SUDBURY, Suffolk",
+    "postcode":"CO10 1RF",
+    "Easting":587390,
+    "Northing":241499,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 52.048066,0.844481 ]
+    },
+    "properties": {
+    "fsa_ID":850,
+    "Name":"White Horse",
+    "Address":"White Horse Inn, Mill Green, Edwardstone, SUDBURY",
+    "postcode":"CO10 5PX",
+    "Easting":595149,
+    "Northing":242672,
+    "Authority":"Babergh"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 51.586173,0.444311 ]
+    },
+    "properties": {
+    "fsa_ID":948,
+    "Name":"Barleylands Social Club",
+    "Address":"Barleylands Road, Basildon, Essex",
+    "postcode":"SS15 4BJ",
+    "Easting":569436,
+    "Northing":190310,
+    "Authority":"Basildon"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 51.572663,0.487228 ]
+    },
+    "properties": {
+    "fsa_ID":954,
+    "Name":"Basildon & Pitsea Cricket Club",
+    "Address":"The Clubhouse,Mopsies Park, Timberlog Close, Basildon, Essex",
+    "postcode":"SS14 1PF",
+    "Easting":572460,
+    "Northing":188908,
+    "Authority":"Basildon"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 51.586077,0.476787 ]
+    },
+    "properties": {
+    "fsa_ID":965,
+    "Name":"Basildon Rugby Football Club",
+    "Address":"Gardiners Close, Basildon, Essex",
+    "postcode":"SS14 3AW",
+    "Easting":571686,
+    "Northing":190376,
+    "Authority":"Basildon"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 51.570643,0.457173 ]
+    },
+    "properties": {
+    "fsa_ID":967,
+    "Name":"Basildon Snooker Centre",
+    "Address":"5 High Pavement, Basildon, Essex",
+    "postcode":"SS14 1EA",
+    "Easting":570385,
+    "Northing":188613,
+    "Authority":"Basildon"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 51.589844,0.484038 ]
+    },
+    "properties": {
+    "fsa_ID":968,
+    "Name":"Basildon Sports & Leisure Club",
+    "Address":"Gardiners Way, Basildon, Essex",
+    "postcode":"SS14 3AP",
+    "Easting":572174,
+    "Northing":190811,
+    "Authority":"Basildon"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+       "type": "Point",
+       "coordinates":  [ 51.586077,0.476787 ]
+    },
+    "properties": {
+    "fsa_ID":969,
+    "Name":"Basildon United Football Club",
+    "Address":"Gardiners Close, Basildon, Essex",
+    "postcode":"SS14 3AW",
+    "Easting":571686,
+    "Northing":190376,
+    "Authority":"Basildon"
+    }
+  }
+]
+}
