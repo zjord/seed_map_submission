@@ -1,44 +1,50 @@
+// based on tutorial from https://www.taniarascia.com/getting-started-with-react/
+
 import React, {Component} from 'react'
 import Table from './Table'
 import Form from "./Form";
 
-class App extends Component {
+export default class App extends Component {
+    //TODO add comments dawg
+    // add references on copied Tania files
+
     state = {
-        characters: [],
+        dData: [],
     }
 
-    removeCharacter = index => {
-        const {characters} = this.state
+    remove_dData = index => {
+        const {dData} = this.state
 
         this.setState({
-            characters: characters.filter((character, i) => {
+            dData: dData.filter((cdData, i) => {
                 return i !== index;
             })
         });
     }
 
-    handleSubmit = (character) => {
+    handleSubmit = (cdData) => {
         this.setState({
-            characters: [...this.state.characters, character],
+            dData: [...this.state.dData, cdData],
           })
     }
 
     render() {
-        const {characters} = this.state
+        const {dData} = this.state
 
         return (
             <div className="container">
-                <h1>React-based User Input Webapp</h1>
-                <p style={{textAlign: "center"}}>ZJORD, Imperial College 2021/22</p>
+                <h1 style={{textAlign: "center"}}>React-based User Input Webapp</h1>
+                <h4 style={{textAlign: "center"}}>Dandelion Seed Mapping Project</h4>
+                <p style={{textAlign: "center",}}>ZJORD, Imperial College 2021/22</p>
+
+
                 <Table
-                    characterData={characters}
-                    removeCharacter={this.removeCharacter} />
-                <h3>Add new</h3>
+                    dData={dData}
+                    remove_dData={this.remove_dData} />
+                <h3>Add new entry</h3>
                 <Form
                     handleSubmit={this.handleSubmit} />
             </div>
         )
     }
 }
-
-export default App
