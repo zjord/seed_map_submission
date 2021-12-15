@@ -187,6 +187,9 @@ input {
   /* 1 */
   overflow: visible;
 }
+input[type='file'] {
+  color: rgba(60,60,60,1)
+}
 
 /**
  * Remove the inheritance of text transform in Edge, Firefox, and IE.

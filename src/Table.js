@@ -1,11 +1,12 @@
-import React, {Component} from 'react'
+// based on tutorial from https://www.taniarascia.com/getting-started-with-react/
+import React from 'react'
 
-const TableHeader = () => {
+const TableHeader = () => { // Table: functional components
     return(
         <thead>
         <tr>
-            <th>Name</th>
-            <th>Job</th>
+            <th>Colour</th>
+            <th>Location</th>
             <th>Image</th>
             <th>Delete row</th>
         </tr>
@@ -13,14 +14,14 @@ const TableHeader = () => {
     )
 }
 const TableBody = (props) => {
-    const rows = props.characterData.map((row, index) => {
+    const rows = props.dData.map((row, index) => {
         return (
             <tr key={index}>
-                <td>{row.name}</td>
-                <td>{row.job}</td>
-                <td><img src={URL.createObjectURL(row.imgurl)} alt="ImgSubmission" height={100}/></td>
+                <td>{row.col}</td>
+                <td>{row.loc}</td>
+                <td><img src={URL.createObjectURL(row.img)} alt="ImgSubmission" height={100}/></td>
                 <td>
-                    <button onClick={() => props.removeCharacter(index)}>X</button>
+                    <button onClick={() => props.remove_dData(index)}>X</button>
                 </td>
             </tr>
         );
@@ -28,14 +29,15 @@ const TableBody = (props) => {
     return <tbody>{rows}</tbody>
 }
 const Table = (props) => {
-    const {characterData, removeCharacter} = props
+    const {dData, remove_dData} = props
 
     return (
         <table>
             <TableHeader />
-            <TableBody characterData={characterData} removeCharacter={removeCharacter} />
+            <TableBody dData={dData} remove_dData={remove_dData} />
         </table>
     )
 }
 
+// const ("state" less components) need to be declared and exported afterwards
 export default Table
