@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c961eb01-5fdf-426b-a6dc-6487e1e03a4a" name="Changes" comment="fulham_pubs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-leaflet-map/src/data/fulham_pubs.json" beforeDir="false" afterPath="$PROJECT_DIR$/react-leaflet-map/src/data/fulham_pubs.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-leaflet-map/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/react-leaflet-map/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +53,8 @@
       <option name="presentableId" value="Default" />
       <updated>1639224050031</updated>
       <workItem from="1639224053156" duration="9231000" />
-      <workItem from="1639310709935" duration="6465000" />
+      <workItem from="1639310709935" duration="8278000" />
+      <workItem from="1639593618883" duration="896000" />
     </task>
     <task id="LOCAL-00001" summary="Leaflet App">
       <created>1639231862890</created>
@@ -83,7 +84,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639320383329</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fulham_pubs">
+      <created>1639326504621</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1639326504621</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
