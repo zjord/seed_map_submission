@@ -4,20 +4,21 @@ import React, {Component} from "react";
 export default class Form extends Component { // Form: class component
     initialState = {
         col: '',
-        loc: '',
-        img:'',
+        lat: '',
+        lon: '',
+        img: '',
     }
-    state = this.initialState
+    state = this.initialState;
 
-    handleDataChange = (event) => {
-        const {name, value} = event.target
+    handleDataChange = e => {
+        const {name, value} = e.target
         this.setState({
             [name]: value,
         })
     }
 
-    handleImgChange = (event) => {
-        const img = event.target.files[0]
+    handleImgChange = e => {
+        const img = e.target.files[0]
         console.log(img)
         this.setState({
             img: img,
@@ -32,20 +33,38 @@ export default class Form extends Component { // Form: class component
         console.log("key_press")
     }
 
+    componentDidMount() {
+        navigator.geolocation.getCurrentPosition(
+            // function(position) {
+            //     console.log(position.coords)
+            // },
+
+            // very wishy-washi way of slapping coordinates into form
+            success =>
+                this.setState({
+                    lat: success.coords.latitude,
+                    lon: success.coords.longitude,
+                }),
+            function(error) {
+                console.error("Error Code = " + error.code + " - " + error.message);
+            }
+        );
+        // at this point, state = ''
+    }
+
     submitForm = () => {
-        // console.log(this.state)
         //TODO automize empty data handling for all states
-        if ( (this.state.col && this.state.loc && this.state.img ) === '' ){
+        if ( (this.state.col && this.state.lat && this.state.lon && this.state.img ) === '' ){
             alert("empty form box! :(")
-        } else { this.props.handleSubmit(this.state) }
+        }
+        else { this.props.handleSubmit(this.state) }
 
         this.setState(this.initialState) // clears form
         document.getElementById('fileB').value= null; // resets fileButton text to "No file chosen"
-
     }
 
     render() {
-        const {col, loc} = this.state; //img unused
+        const {col, lat, lon} = this.state; //img unused
 
         return (
             <form>
@@ -57,14 +76,23 @@ export default class Form extends Component { // Form: class component
                     value={col}
                     onChange={this.handleDataChange}
                     onKeyDown={this.handleKeypress}/>
-                <label htmlFor="loc">Location</label>
+                <label htmlFor="lat">Latitude</label>
                 <input
                     type="text"
-                    name="loc"
-                    id="loc"
-                    value={loc}
+                    name="lat"
+                    id="lat"
+                    value={lat}
                     onChange={this.handleDataChange}
                     onKeyDown={this.handleKeypress}/>
+                <label htmlFor="lon">Longitude</label>
+                <input
+                    type="text"
+                    name="lon"
+                    id="lon"
+                    value={lon}
+                    onChange={this.handleDataChange}
+                    onKeyDown={this.handleKeypress}/>
+                <label htmlFor="img">Image</label>
                 <input
                     accept="image/*"
                     type="file"

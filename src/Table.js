@@ -6,7 +6,8 @@ const TableHeader = () => { // Table: functional components
         <thead>
         <tr>
             <th>Colour</th>
-            <th>Location</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
             <th>Image</th>
             <th>Delete row</th>
         </tr>
@@ -18,7 +19,8 @@ const TableBody = (props) => {
         return (
             <tr key={index}>
                 <td>{row.col}</td>
-                <td>{row.loc}</td>
+                <td>{row.lat}</td>
+                <td>{row.lon}</td>
                 <td><img src={URL.createObjectURL(row.img)} alt="ImgSubmission" height={100}/></td>
                 <td>
                     <button onClick={() => props.remove_dData(index)}>X</button>
