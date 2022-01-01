@@ -5,38 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71e95d83-81fe-45be-9921-893ed6f90fb7" name="Changes" comment="dan_dev and oscar_dev branch merch&#10;form + map">
+      <change afterPath="$PROJECT_DIR$/src/MyMap.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-leaflet-map/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-leaflet-map/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-leaflet-map/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-leaflet-map/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-leaflet-map/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-leaflet-map/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-leaflet-map/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-leaflet-map/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-leaflet-map/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-leaflet-map/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-leaflet-map/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-leaflet-map/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-leaflet-map/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-leaflet-map/src/data/fulham_pubs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-leaflet-map/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-leaflet-map/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-leaflet-map/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-leaflet-map/src/reportWebVitals.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-leaflet-map/src/setupTests.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitiveUI.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -45,7 +28,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RESET_MODE" value="KEEP" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -104,6 +87,11 @@
       <option name="presentableId" value="Default" />
       <updated>1639672550554</updated>
       <workItem from="1639672558079" duration="311000" />
+      <workItem from="1639682984289" duration="774000" />
+      <workItem from="1639694638232" duration="2120000" />
+      <workItem from="1639998612696" duration="175000" />
+      <workItem from="1641051790963" duration="568000" />
+      <workItem from="1641053432292" duration="3026000" />
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
@@ -122,7 +110,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="dan_dev" />
+                        <option value="oscar_dev" />
                       </list>
                     </value>
                   </entry>

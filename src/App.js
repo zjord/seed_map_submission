@@ -8,6 +8,7 @@ import Form from "./Form";
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import "leaflet/dist/leaflet.css";
 import { Icon } from "leaflet";
+import MyMap from "./MyMap";
 // Marker, Popup and Icon are unused atm, will be used to plot dandelion locs on map
 
 export default class App extends Component {
@@ -15,6 +16,7 @@ export default class App extends Component {
     state = {
         dData: [],
     }
+    pos;
 
     remove_dData = index => {
         const {dData} = this.state
@@ -29,6 +31,16 @@ export default class App extends Component {
         this.setState({
             dData: [...this.state.dData, cdData],
           })
+    }
+    componentDidMount() {
+        navigator.geolocation.getCurrentPosition(
+            function(position) {
+                console.log(position)
+            },
+            function(error) {
+                console.error("Error Code = " + error.code + " - " + error.message);
+            }
+        );
     }
 
     render() {
@@ -45,14 +57,7 @@ export default class App extends Component {
                 <h3>Add new entry</h3>
                 <Form
                     handleSubmit={this.handleSubmit} />
-                <MapContainer
-                    center={[51.5072, -0.118092]}
-                    zoom={12}>
-                    <TileLayer
-                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                    />
-                </MapContainer>
+                <MyMap/>
             </div>
         )
     }
