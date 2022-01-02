@@ -1,28 +1,32 @@
 // based on tutorial from https://www.taniarascia.com/getting-started-with-react/
 import React, {Component} from "react";
 
+//from roy_dev
+import {accessSpreadsheet} from './googlesheets.js';
+
 export default class Form extends Component { // Form: class component
     initialState = {
         col: '',
-        lat: '',
-        lon: '',
+        coords: {
+            lat: '',
+            lon: '',
+        },
+        //lat: '',
+        //lon: '',
+        time: '',
         img: '',
     }
     state = this.initialState;
 
     handleDataChange = e => {
         const {name, value} = e.target
-        this.setState({
-            [name]: value,
-        })
+        this.setState({[name]: value})
     }
 
     handleImgChange = e => {
         const img = e.target.files[0]
         console.log(img)
-        this.setState({
-            img: img,
-        })
+        this.setState({img: img})
     }
 
     handleKeypress = e => {
@@ -54,17 +58,22 @@ export default class Form extends Component { // Form: class component
 
     submitForm = () => {
         //TODO automize empty data handling for all states
-        if ( (this.state.col && this.state.lat && this.state.lon && this.state.img ) === '' ){
+        //if ( (this.state.col && this.state.lat && this.state.lon && this.state.img ) === '' ){
+        if ( (this.state.col && this.state.coords && this.state.img && this.state.time) === '' ){
             alert("empty form box! :(")
         }
-        else { this.props.handleSubmit(this.state) }
+        else {
+            this.props.handleSubmit(this.state)
+            //TODO accessSpreadsheet implementation
+            accessSpreadsheet(this.state.col, this.state.coords, this.state.time,this.state.img)
+        }
 
         this.setState(this.initialState) // clears form
         document.getElementById('fileB').value= null; // resets fileButton text to "No file chosen"
     }
 
     render() {
-        const {col, lat, lon} = this.state; //img unused
+        const {col, lat, lon,time} = this.state; //img unused
 
         return (
             <form>
@@ -84,6 +93,7 @@ export default class Form extends Component { // Form: class component
                     value={lat}
                     onChange={this.handleDataChange}
                     onKeyDown={this.handleKeypress}/>
+
                 <label htmlFor="lon">Longitude</label>
                 <input
                     type="text"
@@ -92,12 +102,23 @@ export default class Form extends Component { // Form: class component
                     value={lon}
                     onChange={this.handleDataChange}
                     onKeyDown={this.handleKeypress}/>
+
+                <label htmlFor="time">Time</label>
+                <input
+                    type="time"
+                    name="time"
+                    id="time"
+                    value={time}
+                    onChange={this.handleDataChange}
+                    onKeyDown={this.handleKeypress}/>
+
                 <label htmlFor="img">Image</label>
                 <input
                     accept="image/*"
                     type="file"
                     id="fileB"
                     onChange={this.handleImgChange}/>
+
                 <input
                     type="button"
                     value="Submit"

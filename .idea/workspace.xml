@@ -5,9 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71e95d83-81fe-45be-9921-893ed6f90fb7" name="Changes" comment="location:form auto-grab-in main">
+      <change afterPath="$PROJECT_DIR$/src/Form_roy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/googlesheets_cl.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.old.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App_cl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/client_secret.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/client_secret.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/googlesheets.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/googlesheets.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Table.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Table.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +38,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dan_dev" />
+        <entry key="$PROJECT_DIR$" value="oscar_dev" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -50,17 +64,23 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\danie\OneDrive - Imperial College London\Y3\Autumn\Programming3\SeedMappinngProject_D\seed_map\src" />
       <recent name="C:\Users\danie\OneDrive - Imperial College London\Y3\Autumn\Programming3\SeedMappinngProject_D\seed_map" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\danie\OneDrive - Imperial College London\Y3\Autumn\Programming3\SeedMappinngProject_D\seed_map\" />
+      <recent name="C:\Users\danie\OneDrive - Imperial College London\Y3\Autumn\Programming3\SeedMappinngProject_D\seed_map" />
+      <recent name="C:\Users\danie\OneDrive - Imperial College London\Y3\Autumn\Programming3\SeedMappinngProject_D\seed_map\client" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+    <configuration name="start" type="js.build_tools.npm" temporary="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
@@ -70,6 +90,12 @@
       <envs />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -105,19 +131,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/main" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
         <entry key="d13128b8-2a7f-4dcc-a996-1e7ff4f0302a">

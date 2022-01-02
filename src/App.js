@@ -10,13 +10,8 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { Icon } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import MyMap from "./MyMap";
-import {getPosition} from "leaflet/src/dom/DomUtil";
-
-//from roy_dev
-import {accessSpreadsheet} from './googlesheets.js';
 
 export default class App extends Component {
-    // TODO add comments dawg
     state = {
         dData: [], //dandelionData
     }
