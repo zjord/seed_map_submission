@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71e95d83-81fe-45be-9921-893ed6f90fb7" name="Changes" comment="dan_dev and oscar_dev branch merch&#10;form + map">
-      <change afterPath="$PROJECT_DIR$/src/MyMap.js" afterDir="false" />
+    <list default="true" id="71e95d83-81fe-45be-9921-893ed6f90fb7" name="Changes" comment="location:form auto-grab-in main">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.old.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +92,7 @@
       <workItem from="1639998612696" duration="175000" />
       <workItem from="1641051790963" duration="568000" />
       <workItem from="1641053432292" duration="3026000" />
+      <workItem from="1641152304777" duration="215000" />
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
@@ -110,7 +111,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="oscar_dev" />
+                        <option value="origin/main" />
                       </list>
                     </value>
                   </entry>
@@ -131,6 +132,11 @@
         <entry key="Branch">
           <value>
             <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/main" />
+                </option>
+              </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
                   <option value="HEAD" />
