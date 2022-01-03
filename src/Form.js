@@ -7,12 +7,8 @@ import {accessSpreadsheet} from './googlesheets.js';
 export default class Form extends Component { // Form: class component
     initialState = {
         col: '',
-        coords: {
-            lat: '',
-            lon: '',
-        },
-        //lat: '',
-        //lon: '',
+        lat: '',
+        lon: '',
         time: '',
         img: '',
     }
@@ -59,13 +55,15 @@ export default class Form extends Component { // Form: class component
     submitForm = () => {
         //TODO automize empty data handling for all states
         //if ( (this.state.col && this.state.lat && this.state.lon && this.state.img ) === '' ){
-        if ( (this.state.col && this.state.coords && this.state.img && this.state.time) === '' ){
+        if ( (this.state.lat && this.state.lon && this.state.img) === '' ){ //this.state.time && this.state.col
             alert("empty form box! :(")
         }
         else {
             this.props.handleSubmit(this.state)
             //TODO accessSpreadsheet implementation
-            accessSpreadsheet(this.state.col, this.state.coords, this.state.time,this.state.img)
+            console.log(this.state);
+            accessSpreadsheet(this.state.col, this.state.lat, this.state.lon, this.state.time,this.state.img);
+            //console.log(this.state);
         }
 
         this.setState(this.initialState) // clears form
