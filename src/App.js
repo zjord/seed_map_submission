@@ -34,7 +34,8 @@ export default class App extends Component {
 
         return (
             <div className="container">
-                <h1 style={{textAlign: "center"}}>React-based User Input Webapp</h1>
+                <img src="logo1.png" alt={"logo"} width={'100'} loading={'eager'}/>
+                <h1 style={{textAlign: "center"}}>React-based User Input Webapps</h1>
                 <h4 style={{textAlign: "center"}}>Dandelion Seed Mapping Project</h4>
                 <p style={{textAlign: "center"}}>ZJORD, Imperial College 2021/22</p>
                 <p style={{textAlign: "left"}}>[Preview table]</p>

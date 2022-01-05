@@ -115,6 +115,7 @@ export default class Form extends Component { // Form: class component
                     accept="image/*"
                     type="file"
                     id="fileB"
+                    capture = "environment"
                     onChange={this.handleImgChange}/>
 
                 <input

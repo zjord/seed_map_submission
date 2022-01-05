@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d1d7a76-7fbb-4df3-be0e-3bacfb507f1a" name="Changes" comment="working 123">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App_cl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form_roy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/googlesheets.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/googlesheets.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/googlesheets_cl.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="jem_dev" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -109,7 +104,7 @@
       <updated>1639665090169</updated>
     </task>
     <task active="true" id="Default" summary="Default task">
-      <changelist id="71e95d83-81fe-45be-9921-893ed6f90fb7" name="Changes" comment="dan_dev and oscar_dev branch merch&#10;form + map" />
+      <changelist id="9d1d7a76-7fbb-4df3-be0e-3bacfb507f1a" name="Changes" comment="working 123" />
       <created>1639672550554</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -121,6 +116,7 @@
       <workItem from="1641051790963" duration="568000" />
       <workItem from="1641053432292" duration="3026000" />
       <workItem from="1641152304777" duration="215000" />
+      <workItem from="1641328396464" duration="2306000" />
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
@@ -133,7 +129,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/jem_dev" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
         <entry key="d13128b8-2a7f-4dcc-a996-1e7ff4f0302a">
