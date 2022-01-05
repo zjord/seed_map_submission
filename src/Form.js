@@ -1,11 +1,9 @@
 // based on tutorial from https://www.taniarascia.com/getting-started-with-react/
 import React, {Component} from "react";
 
-//mobileLocationFix
-
 //better alerts
 import Swal from "sweetalert2";
-// import withReactContent from "sweetalert2-react-content"
+// import withReactContent from "sweetalert2-react-content" //not needed for now
 
 //access to G.Sheets database
 import {accessSpreadsheet} from './googlesheets.js';
@@ -17,6 +15,7 @@ export default class Form extends Component { // Form: class component
         lon: '',
         time: '',
         img: '',
+        autoloc: ''
     }
     state = this.initialState;
 
@@ -27,19 +26,13 @@ export default class Form extends Component { // Form: class component
 
     handleImgChange = e => {
         const img = e.target.files[0]
-        console.log(img)
         this.setState({img: img})
     }
 
     handleKeypress = e => {
-        if (e.keyCode === 13){
-            this.submitForm()
-            console.log("enter pressed")
-        }
-        console.log("key_press")
+        if (e.keyCode === 13){ this.submitForm() }
     }
 
-    //TODO implement grabLocation function with Mobile
     grabLocation = () => {
         navigator.geolocation.getCurrentPosition(
             success => {
@@ -51,10 +44,11 @@ export default class Form extends Component { // Form: class component
                     this.setState({
                         lat: success.coords.latitude,
                         lon: success.coords.longitude,
+                        autoloc: 'Auto'
                     })
                 })
             },
-            function() {
+            error => {
                 Swal.fire({
                     title: "Error!",
                     html: 'Pro Tip: Reset your device\'s permissions and reload the website.<br>' +
@@ -62,29 +56,35 @@ export default class Form extends Component { // Form: class component
                     confirmButtonText: "Aw man",
                     footer: 'Pro Tip 2: Use Google Maps to find the approx coordinates',
                     icon: "error",
+                }).then(() => {
+                    console.log("Error while grabbing user's loc:")
+                    console.log(error)
+                    this.setState({
+                        autoloc: 'Manual'
+                    })
                 })
             }
         )
     }
 
     submitForm = () => {
-        //TODO automize empty data handling for all states
         if ( (this.state.lat && this.state.lon && this.state.img) === '' ){ //this.state.time && this.state.col
             Swal.fire({
                 title: "Warning",
                 text: "You missed out vital info!",
                 confirmButtonText: "Let me double check",
                 icon: "warning",
-            })
+            }).then(/*empty promise*/)
         }
         else {
             this.props.handleSubmit(this.state)
-            accessSpreadsheet(this.state.col, this.state.lat, this.state.lon, this.state.time,this.state.img);
+            accessSpreadsheet(this.state.col, this.state.lat, this.state.lon, this.state.time, this.state.autoloc, this.state.img)
+                .then(() => console.log('Spreadsheet accessed'));
             Swal.fire({
                 title: "Entry submitted",
                 html: "Thank you for your submission! <br> You can find your own pin in the map below",
                 icon: "success",
-            });
+            }).then(/*empty promise*/)
         }
 
         this.setState(this.initialState); // clears form
@@ -92,7 +92,7 @@ export default class Form extends Component { // Form: class component
     }
 
     render() {
-        const {col, lat, lon,time} = this.state; //img unused
+        const {col, lat, lon, time} = this.state; //img unused
 
         return (
             <form>
@@ -140,7 +140,7 @@ export default class Form extends Component { // Form: class component
                     accept="image/*"
                     type="file"
                     id="fileB"
-                    capture="environment" //allow mobile external camera use instead of file selection
+                    capture="environment" //enable mobile external camera instead of file selection
                     onChange={this.handleImgChange}/>
 
                 <input
