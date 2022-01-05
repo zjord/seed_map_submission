@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d1d7a76-7fbb-4df3-be0e-3bacfb507f1a" name="Changes" comment="working 123">
+    <list default="true" id="71e95d83-81fe-45be-9921-893ed6f90fb7" name="Changes" comment="Location Permission">
+      <change afterPath="$PROJECT_DIR$/src/markers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App_cl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form_roy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/googlesheets.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/googlesheets.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/googlesheets_cl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyMap.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,6 +121,7 @@
       <workItem from="1641051790963" duration="568000" />
       <workItem from="1641053432292" duration="3026000" />
       <workItem from="1641152304777" duration="215000" />
+      <workItem from="1641382535580" duration="16130000" />
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />

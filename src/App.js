@@ -2,6 +2,7 @@
 import React, {Component} from 'react'
 import Table from './Table'
 import Form from "./Form";
+import {AddMarkers} from "./markers";
 
 //from oscar_dev
 // TODO investigate dependence on "public" folder (eg, index.html)
@@ -15,6 +16,7 @@ export default class App extends Component {
     state = {
         dData: [], //dandelionData
     }
+
     remove_dData = index => {
         const {dData} = this.state.dData
         this.setState({

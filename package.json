@@ -10,14 +10,14 @@
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "express": "^4.17.2",
+    "google-spreadsheet": "^3.2.0",
+    "google-spreadsheets": "^1.0.0",
     "leaflet": "^1.7.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2",
-    "express": "^4.17.2",
-    "google-spreadsheet": "^3.2.0",
-    "google-spreadsheets": "^1.0.0"
+    "web-vitals": "^1.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -42,7 +42,7 @@
     "last 1 safari version"
   ],
   "devDependencies": {
+    "g-sheets-api": "^2.1.2",
     "react-leaflet": "^3.2.2"
   }
 }
-
