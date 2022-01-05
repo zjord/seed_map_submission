@@ -3,11 +3,11 @@ import React, {Component} from 'react'
 import Table from './Table'
 import Form from "./Form";
 
-//from oscar_dev
 // TODO investigate dependence on "public" folder (eg, index.html)
-// Marker, Popup and Icon are unused atm, will be used to plot dandelion locs on map
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import { Icon } from "leaflet";
+// TODO change webapp icon in index.html
+// Marker, Popup and Icon are unused atm, will be used to plot dandelion loc on map
+// import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+// import { Icon } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import MyMap from "./MyMap";
 
@@ -37,11 +37,11 @@ export default class App extends Component {
                 <h1 style={{textAlign: "center"}}>React-based User Input Webapp</h1>
                 <h4 style={{textAlign: "center"}}>Dandelion Seed Mapping Project</h4>
                 <p style={{textAlign: "center"}}>ZJORD, Imperial College 2021/22</p>
-                <p style={{textAlign: "left"}}>[Preview table]</p>
+                <p style={{textAlign: "center"}}>[Preview table]</p>
                 <Table
                     dData={dData}
                     remove_dData={this.remove_dData} />
-                <h3>Add new entry</h3>
+                <h3>Add new entry!</h3>
                 <Form
                     handleSubmit={this.handleSubmit} />
                 <p style={{textAlign: "center"}}> Here are all the found dandelion seeds so far! </p>

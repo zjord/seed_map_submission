@@ -1,7 +1,13 @@
 // based on tutorial from https://www.taniarascia.com/getting-started-with-react/
 import React, {Component} from "react";
 
-//from roy_dev
+//mobileLocationFix
+
+//better alerts
+import Swal from "sweetalert2";
+// import withReactContent from "sweetalert2-react-content"
+
+//access to G.Sheets database
 import {accessSpreadsheet} from './googlesheets.js';
 
 export default class Form extends Component { // Form: class component
@@ -33,40 +39,55 @@ export default class Form extends Component { // Form: class component
         console.log("key_press")
     }
 
-    componentDidMount() {
+    //TODO implement grabLocation function with Mobile
+    grabLocation = () => {
         navigator.geolocation.getCurrentPosition(
-            // function(position) {
-            //     console.log(position.coords)
-            // },
-
-            // very wishy-washi way of slapping coordinates into form
-            success =>
-                this.setState({
-                    lat: success.coords.latitude,
-                    lon: success.coords.longitude,
-                }),
-            function(error) {
-                console.error("Error Code = " + error.code + " - " + error.message);
+            success => {
+                Swal.fire({
+                    title: "Location grabbed!",
+                    confirmButtonText: "Nice!",
+                    icon: "success",
+                }).then(() => {
+                    this.setState({
+                        lat: success.coords.latitude,
+                        lon: success.coords.longitude,
+                    })
+                })
+            },
+            function() {
+                Swal.fire({
+                    title: "Error!",
+                    html: 'Pro Tip: Reset your device\'s permissions and reload the website.<br>' +
+                        'If that fails, please input the coordinates manually',
+                    confirmButtonText: "Aw man",
+                    footer: 'Pro Tip 2: Use Google Maps to find the approx coordinates',
+                    icon: "error",
+                })
             }
-        );
-        // at this point, state = ''
+        )
     }
 
     submitForm = () => {
         //TODO automize empty data handling for all states
-        //if ( (this.state.col && this.state.lat && this.state.lon && this.state.img ) === '' ){
         if ( (this.state.lat && this.state.lon && this.state.img) === '' ){ //this.state.time && this.state.col
-            alert("empty form box! :(")
+            Swal.fire({
+                title: "Warning",
+                text: "You missed out vital info!",
+                confirmButtonText: "Let me double check",
+                icon: "warning",
+            })
         }
         else {
             this.props.handleSubmit(this.state)
-            //TODO accessSpreadsheet implementation
-            console.log(this.state);
             accessSpreadsheet(this.state.col, this.state.lat, this.state.lon, this.state.time,this.state.img);
-            //console.log(this.state);
+            Swal.fire({
+                title: "Entry submitted",
+                html: "Thank you for your submission! <br> You can find your own pin in the map below",
+                icon: "success",
+            });
         }
 
-        this.setState(this.initialState) // clears form
+        this.setState(this.initialState); // clears form
         document.getElementById('fileB').value= null; // resets fileButton text to "No file chosen"
     }
 
@@ -91,7 +112,6 @@ export default class Form extends Component { // Form: class component
                     value={lat}
                     onChange={this.handleDataChange}
                     onKeyDown={this.handleKeypress}/>
-
                 <label htmlFor="lon">Longitude</label>
                 <input
                     type="text"
@@ -100,6 +120,11 @@ export default class Form extends Component { // Form: class component
                     value={lon}
                     onChange={this.handleDataChange}
                     onKeyDown={this.handleKeypress}/>
+                <input
+                    type="button"
+                    name="locB"
+                    value="Use my location!"
+                    onClick={this.grabLocation}/>
 
                 <label htmlFor="time">Time</label>
                 <input
@@ -115,6 +140,7 @@ export default class Form extends Component { // Form: class component
                     accept="image/*"
                     type="file"
                     id="fileB"
+                    capture="environment" //allow mobile external camera use instead of file selection
                     onChange={this.handleImgChange}/>
 
                 <input
