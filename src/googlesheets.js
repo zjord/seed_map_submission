@@ -2,7 +2,7 @@
 
 const {GoogleSpreadsheet} = require('google-spreadsheet');
 const creds = require('./client_secret.json');
-const doc = new GoogleSpreadsheet('1sips_Uhzv8Z7HB4PxsyzrHawt8-BLOghJLAbrDBNvh4'); //initialise the entire googlespreadsheet document
+const doc = new GoogleSpreadsheet('1laEZJYS1Tf8mr6k5gDk3rKlZhngPqJv79EbZdzYxkvo'); //initialise the entire googlespreadsheet document
 
 export async function accessSpreadsheet(col, lat, lon,time, img){
     await doc.useServiceAccountAuth(creds); //initialise auth
