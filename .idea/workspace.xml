@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71e95d83-81fe-45be-9921-893ed6f90fb7" name="Changes" comment="Location Permission">
-      <change afterPath="$PROJECT_DIR$/src/markers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="71e95d83-81fe-45be-9921-893ed6f90fb7" name="Changes" comment="Marker Attempt 1">
+      <change afterPath="$PROJECT_DIR$/public/marker-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/Icon/dandelion.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyMap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client_secret.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/client_secret.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/googlesheets.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/googlesheets.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/markers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/markers.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,19 +55,25 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/static/icon" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\oscar\OneDrive - Imperial College London\Prog3\seed_map\src\static\icon" />
+      <recent name="C:\Users\oscar\OneDrive - Imperial College London\Prog3\seed_map\public" />
+      <recent name="C:\Users\oscar\OneDrive - Imperial College London\Prog3\seed_map\src" />
       <recent name="C:\Users\danie\OneDrive - Imperial College London\Y3\Autumn\Programming3\SeedMappinngProject_D\seed_map\src" />
       <recent name="C:\Users\danie\OneDrive - Imperial College London\Y3\Autumn\Programming3\SeedMappinngProject_D\seed_map" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\oscar\OneDrive - Imperial College London\Prog3\seed_map\src" />
+      <recent name="C:\Users\oscar\OneDrive - Imperial College London\Prog3\seed_map" />
+      <recent name="C:\Users\oscar\OneDrive - Imperial College London\Prog3\seed_map\src\static\Icon" />
       <recent name="C:\Users\danie\OneDrive - Imperial College London\Y3\Autumn\Programming3\SeedMappinngProject_D\seed_map\" />
       <recent name="C:\Users\danie\OneDrive - Imperial College London\Y3\Autumn\Programming3\SeedMappinngProject_D\seed_map" />
-      <recent name="C:\Users\danie\OneDrive - Imperial College London\Y3\Autumn\Programming3\SeedMappinngProject_D\seed_map\client" />
     </key>
   </component>
   <component name="RunManager">
@@ -121,9 +127,18 @@
       <workItem from="1641051790963" duration="568000" />
       <workItem from="1641053432292" duration="3026000" />
       <workItem from="1641152304777" duration="215000" />
-      <workItem from="1641382535580" duration="16130000" />
+      <workItem from="1641382535580" duration="16298000" />
+      <workItem from="1641469310737" duration="13854000" />
+      <workItem from="1641491135693" duration="1533000" />
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Marker Attempt 1">
+      <created>1641403006943</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1641403006944</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,6 +189,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="form cleanup" />
     <MESSAGE value="dan_dev and oscar_dev branch merch&#10;form + map" />
-    <option name="LAST_COMMIT_MESSAGE" value="dan_dev and oscar_dev branch merch&#10;form + map" />
+    <MESSAGE value="Marker Attempt 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Marker Attempt 1" />
   </component>
 </project>

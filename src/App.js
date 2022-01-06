@@ -3,19 +3,28 @@ import React, {Component} from 'react'
 import Table from './Table'
 import Form from "./Form";
 import {AddMarkers} from "./markers";
+import L from "leaflet";
 
 //from oscar_dev
 // TODO investigate dependence on "public" folder (eg, index.html)
 // Marker, Popup and Icon are unused atm, will be used to plot dandelion locs on map
+
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import { Icon } from "leaflet";
 import "leaflet/dist/leaflet.css";
-import MyMap from "./MyMap";
 
 export default class App extends Component {
     state = {
         dData: [], //dandelionData
+        marker: []
     }
+
+    componentDidMount() {
+        AddMarkers()
+            .then(r=>this.setState({marker: r}))
+            .then(r=>console.log(r))
+
+    }//Use AddMarkers to grab coordintes from google sheets, set marker state to array of coords
+
 
     remove_dData = index => {
         const {dData} = this.state.dData
@@ -31,8 +40,13 @@ export default class App extends Component {
           })
     }
     render() {
-        const {dData} = this.state
-        console.log(this.state)
+        const {dData} = this.state;
+        console.log(this.state);
+
+        // const pin = new L.Icon({
+        //     iconUrl: require('./static/icon/seed.png'),
+        //     iconSize: [50,50]
+        // })
 
         return (
             <div className="container">
@@ -47,7 +61,31 @@ export default class App extends Component {
                 <Form
                     handleSubmit={this.handleSubmit} />
                 <p style={{textAlign: "center"}}> Here are all the found dandelion seeds so far! </p>
-                <MyMap/>
+
+
+                <MapContainer
+                    className="map"
+                    center={[51.5072, -0.118092]}
+                    zoom={10}
+                    style={{ height: 500, width: "100%" }}
+                >
+                    <TileLayer
+                        attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    />
+
+                    {this.state.marker.map(coord=> <Marker
+                        key = {Math.random()}
+                        position = {coord}
+                        icon = { new L.Icon({
+                                 iconUrl: require('./static/icon/marker-icon.png'),
+                                 iconSize: [50,50]
+                             })}
+                        // TODO Fix icon not displaying
+                    />
+                    )}
+
+                </MapContainer>
             </div>
         )
     }
