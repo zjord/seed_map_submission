@@ -1,6 +1,3 @@
-import {map, Marker} from "leaflet/dist/leaflet-src.esm";
-import React from "react";
-
 const {GoogleSpreadsheet} = require('google-spreadsheet');
 const creds = require('./client_secret.json');
 const doc = new GoogleSpreadsheet('1laEZJYS1Tf8mr6k5gDk3rKlZhngPqJv79EbZdzYxkvo'); //initialise the entire googlespreadsheet document

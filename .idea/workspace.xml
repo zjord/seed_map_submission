@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71e95d83-81fe-45be-9921-893ed6f90fb7" name="Changes" comment="Marker Attempt 1">
-      <change afterPath="$PROJECT_DIR$/public/marker-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static/Icon/dandelion.png" afterDir="false" />
+    <list default="true" id="71e95d83-81fe-45be-9921-893ed6f90fb7" name="Changes" comment="Markers showing up (sort of)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyMap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client_secret.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/client_secret.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/googlesheets.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/googlesheets.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/markers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/markers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/Icon/dandelion.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/Icon/dandelion.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +125,7 @@
       <workItem from="1641152304777" duration="215000" />
       <workItem from="1641382535580" duration="16298000" />
       <workItem from="1641469310737" duration="13854000" />
-      <workItem from="1641491135693" duration="1533000" />
+      <workItem from="1641491135693" duration="2670000" />
     </task>
     <task id="LOCAL-00002" summary="Marker Attempt 1">
       <created>1641403006943</created>
@@ -138,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641403006944</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Markers showing up (sort of)">
+      <created>1641492965266</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1641492965266</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,6 +193,7 @@
     <MESSAGE value="form cleanup" />
     <MESSAGE value="dan_dev and oscar_dev branch merch&#10;form + map" />
     <MESSAGE value="Marker Attempt 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Marker Attempt 1" />
+    <MESSAGE value="Markers showing up (sort of)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Markers showing up (sort of)" />
   </component>
 </project>

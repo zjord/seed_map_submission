@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 import Table from './Table'
 import Form from "./Form";
 import {AddMarkers} from "./markers";
-import L from "leaflet";
+import dandelion from './static/icon/dandelion.png'
 
 //from oscar_dev
 // TODO investigate dependence on "public" folder (eg, index.html)
@@ -11,6 +11,7 @@ import L from "leaflet";
 
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import "leaflet/dist/leaflet.css";
+import {Icon} from "leaflet/dist/leaflet-src.esm";
 
 export default class App extends Component {
     state = {
@@ -77,11 +78,12 @@ export default class App extends Component {
                     {this.state.marker.map(coord=> <Marker
                         key = {Math.random()}
                         position = {coord}
-                        icon = { new L.Icon({
-                                 iconUrl: require('./static/icon/marker-icon.png'),
-                                 iconSize: [50,50]
+                        icon = { new Icon({
+                            iconUrl: dandelion,
+                            iconRetinaUrl: dandelion,
+                            iconSize: [65,65]
                              })}
-                        // TODO Fix icon not displaying
+                        // Maps all coordinates onto React Markers
                     />
                     )}
 
