@@ -3,7 +3,6 @@ import React, {Component} from 'react'
 import Table from './Table'
 import Form from "./Form";
 import logo from "./assets/image.png"
-import description from "./assets/description.txt"
 
 //from oscar_dev
 // TODO investigate dependence on "public" folder (eg, index.html)
