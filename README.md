@@ -6,5 +6,6 @@ frontend + backend, front2back connection
 + then merged backend branches (roy,zhi) into main
 
 Current build supports:
-+ webapp (form + empty map)
++ webapp (form + map)
 + backend (forward connection to g.sheets database)
++ map functionality (connection from g.sheets to map)
