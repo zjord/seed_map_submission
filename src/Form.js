@@ -29,6 +29,7 @@ export default class Form extends Component { // Form: class component
         this.setState({img: img})
     }
 
+    //TODO fix popup dissapearing when pressing enter
     handleKeypress = e => {
         if (e.keyCode === 13){ this.submitForm() }
     }

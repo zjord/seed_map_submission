@@ -1,20 +1,27 @@
 // based on tutorial from https://www.taniarascia.com/getting-started-with-react/
+// TODO investigate dependence on "public" folder (eg, index.html)
 import React, {Component} from 'react'
 import Table from './Table'
 import Form from "./Form";
-
-// TODO investigate dependence on "public" folder (eg, index.html)
-// TODO change webapp icon in index.html
-// Marker, Popup and Icon are unused atm, will be used to plot dandelion loc on map
-// import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-// import { Icon } from "leaflet";
+import {AddMarkers} from "./markers";
+import dandelion from './static/Icon/dandelion.png'
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import "leaflet/dist/leaflet.css";
-import MyMap from "./MyMap";
+import {Icon} from "leaflet/dist/leaflet-src.esm";
 
 export default class App extends Component {
     state = {
         dData: [], //dandelionData
+        marker: []
     }
+
+    componentDidMount() {
+        AddMarkers()
+            .then(r=>this.setState({marker: r}))
+            // .then(r=>console.log(r))
+
+    }//Use AddMarkers to grab coordinates from google sheets, set marker state to array of coords
+
     remove_dData = index => {
         const {dData} = this.state.dData
         this.setState({
@@ -30,7 +37,7 @@ export default class App extends Component {
     }
     render() {
         const {dData} = this.state
-        console.log(this.state)
+        // const {dData} = this.state.dData  //IF NO WORK, TRY THIS
 
         return (
             <div className="container">
@@ -45,7 +52,27 @@ export default class App extends Component {
                 <Form
                     handleSubmit={this.handleSubmit} />
                 <p style={{textAlign: "center"}}> Here are all the found dandelion seeds so far! </p>
-                <MyMap/>
+                <MapContainer
+                    className="map"
+                    center={[51.5072, -0.118092]}
+                    zoom={10}
+                    style={{ height: 500, width: "100%" }}>
+                    <TileLayer
+                        attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
+
+                    {this.state.marker.map(coord=> <Marker
+                        key = {Math.random()}
+                        position = {coord}
+                        icon = { new Icon({
+                            iconUrl: dandelion,
+                            iconRetinaUrl: dandelion,
+                            iconSize: [65,65]
+                             })}
+                        //TODO change icon anchor
+                        // Maps all coordinates onto React Markers
+                    /> )}
+                </MapContainer>
             </div>
         )
     }
