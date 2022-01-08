@@ -4,7 +4,11 @@
 /node_modules
 /.pnp
 .pnp.js
-C:/prg3/seed_map/.idea/workspace.xml
+
+# user-specific settings
+.idea/shelf
+.idea/workspace.xml
+.idea/usage.statistics.xml
 
 # testing
 /coverage
