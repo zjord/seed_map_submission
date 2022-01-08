@@ -29,7 +29,7 @@ export default class Form extends Component { // Form: class component
         this.setState({img: img})
     }
 
-    //TODO fix popup dissapearing when pressing enter
+    //TODO fix popup disappearing when pressing enter
     handleKeypress = e => {
         if (e.keyCode === 13){ this.submitForm() }
     }
@@ -83,7 +83,7 @@ export default class Form extends Component { // Form: class component
                 .then(() => console.log('Spreadsheet accessed'));
             Swal.fire({
                 title: "Entry submitted",
-                html: "Thank you for your submission! <br> You can find your own pin in the map below",
+                html: "Thank you for your submission! <br> You can find your own pin in the map below <br> (Reload the website to see changes)",
                 icon: "success",
             }).then(/*empty promise*/)
         }
@@ -146,7 +146,7 @@ export default class Form extends Component { // Form: class component
 
                 <input
                     type="button"
-                    value="Submit"
+                    value="SUBMIT"
                     onClick={this.submitForm}/>
             </form>
         )

@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71e95d83-81fe-45be-9921-893ed6f90fb7" name="Changes" comment="auto/manual entry tag, updated web favicon, form &amp; g.sheets cleanup">
+    <list default="true" id="71e95d83-81fe-45be-9921-893ed6f90fb7" name="Changes" comment="Merge remote-tracking branch 'origin/oscar_dev'">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyMap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/image.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/assets/jemilicious_logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/Icon/dandelion.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/Icon/dandelion_icon.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +55,7 @@
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/static" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -71,6 +71,7 @@
       <recent name="C:\Users\danie\OneDrive - Imperial College London\Y3\Autumn\Programming3\SeedMappinngProject_D\seed_map" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\danie\OneDrive - Imperial College London\Y3\Autumn\Programming3\SeedMappinngProject_D\seed_map\src\static" />
       <recent name="C:\Users\danie\OneDrive - Imperial College London\Y3\Autumn\Programming3\SeedMappinngProject_D\seed_map\" />
       <recent name="C:\Users\danie\OneDrive - Imperial College London\Y3\Autumn\Programming3\SeedMappinngProject_D\seed_map" />
       <recent name="C:\Users\danie\OneDrive - Imperial College London\Y3\Autumn\Programming3\SeedMappinngProject_D\seed_map\client" />
@@ -144,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641340849730</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Merge remote-tracking branch 'origin/oscar_dev'">
+      <created>1641669750357</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1641669750357</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,6 +212,7 @@
     <MESSAGE value="front2back 1.1" />
     <MESSAGE value="better alerts + loc button" />
     <MESSAGE value="auto/manual entry tag, updated web favicon, form &amp; g.sheets cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="auto/manual entry tag, updated web favicon, form &amp; g.sheets cleanup" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/oscar_dev'" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/oscar_dev'" />
   </component>
 </project>
