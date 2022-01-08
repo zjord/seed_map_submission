@@ -120,7 +120,7 @@ export default class Form extends Component { // Form: class component
 
                 <input
                     type="button"
-                    value="Submit"
+                    value="SUBMIT"
                     onClick={this.submitForm}/>
             </form>
         )

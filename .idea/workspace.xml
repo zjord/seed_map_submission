@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d1d7a76-7fbb-4df3-be0e-3bacfb507f1a" name="Changes" comment="working 123">
-      <change afterPath="$PROJECT_DIR$/src/assets/description.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/image.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/image.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/primitiveUI.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitiveUI.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,17 +68,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -119,6 +108,7 @@
       <workItem from="1641053432292" duration="3026000" />
       <workItem from="1641152304777" duration="215000" />
       <workItem from="1641328396464" duration="15953000" />
+      <workItem from="1641654482086" duration="5448000" />
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />

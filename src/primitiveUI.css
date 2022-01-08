@@ -794,16 +794,15 @@ dd {
  */
 .button, a.button, button, [type=submit], [type=reset], [type=button] {
   -webkit-appearance: none;
-  display: inline-block;
-  border: 1px solid #0366ee;
+  border: 1px solid black;
   border-radius: 4px;
-  background: #0366ee;
-  color: #ffffff;
-  font-weight: 600;
+  background: none;
+  color: black;
+  font-weight: 500;
   font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 1rem;
   text-transform: none;
-  padding: 0.75rem 1.25rem;
+  padding: 0.6rem 1.1rem;
   margin: 0 0 0.5rem 0;
   vertical-align: middle;
   text-align: center;
@@ -1050,7 +1049,27 @@ caption {
   position: center;
 }
 
-
 h1.small {
   font-variant: small-caps;
+}
+
+.about{
+  display: inline-block;
+  max-width: 600px;
+  position: relative;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.button {
+  background-color: red;
+  border: black;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 16px;
 }
