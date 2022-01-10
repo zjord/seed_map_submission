@@ -1,0 +1,46 @@
+{
+  "name": "seed_map",
+  "version": "0.1.0",
+  "private": true,
+  "author": "ZJORD",
+  "license": "ISC",
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "express": "^4.17.2",
+    "google-spreadsheet": "^3.2.0",
+    "leaflet": "^1.7.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-leaflet": "^3.2.2",
+    "react-scripts": "4.0.3",
+    "sweetalert2": "^11.3.3",
+    "sweetalert2-react-content": "^4.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ],
+  "development": [
+    "last 1 chrome version",
+    "last 1 firefox version",
+    "last 1 safari version"
+  ],
+  "devDependencies": {
+    "g-sheets-api": "^2.1.2"
+  }
+}

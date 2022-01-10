@@ -4,51 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71e95d83-81fe-45be-9921-893ed6f90fb7" name="Changes" comment="Merge remote-tracking branch 'origin/oscar_dev'">
-      <change afterPath="$PROJECT_DIR$/client/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/build/asset-manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/build/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/build/static/css/2.fa524fad.chunk.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/build/static/css/2.fa524fad.chunk.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/build/static/css/main.fa1c9fb3.chunk.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/build/static/css/main.fa1c9fb3.chunk.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/build/static/js/2.1663db5f.chunk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/build/static/js/2.1663db5f.chunk.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/build/static/js/2.1663db5f.chunk.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/build/static/js/main.11c1f330.chunk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/build/static/js/main.11c1f330.chunk.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/build/static/js/runtime-main.5218ba0d.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/build/static/js/runtime-main.5218ba0d.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/build/static/media/dandelion_icon.9a95baa8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/build/static/media/jemilicious_logo.15e52c25.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/marker-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/pZJORDfavicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/googlesheets.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyMap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Table.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client_secret.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/googlesheets.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/markers.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/primitiveUI.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/Icon/dandelion_icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/Icon/marker-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/assets/jemilicious_logo.png" beforeDir="false" />
+    <list default="true" id="71e95d83-81fe-45be-9921-893ed6f90fb7" name="Changes" comment="Merge branch 'roy_dev'&#10;&#10;# Conflicts:&#10;#&#9;.gitignore&#10;#&#9;README.md&#10;#&#9;package-lock.json&#10;#&#9;package.json&#10;#&#9;src/Form.js&#10;#&#9;src/MyMap.js&#10;#&#9;src/Table.js&#10;#&#9;src/primitiveUI.css">
+      <change afterPath="$PROJECT_DIR$/client/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/logo192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/logo512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/marker-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/pZJORDfavicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Table.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/markers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/no.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/primitiveUI.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/static/Icon/dandelion_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/static/Icon/marker-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/static/assets/jemilicious_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/upload.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +149,7 @@
       <workItem from="1641424809867" duration="111000" />
       <workItem from="1641503137723" duration="6926000" />
       <workItem from="1641824985287" duration="2600000" />
-      <workItem from="1641827684909" duration="1820000" />
+      <workItem from="1641827684909" duration="2189000" />
     </task>
     <task id="LOCAL-00002" summary="front2back 1.1">
       <created>1641158534252</created>
@@ -195,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641669750357</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Merge branch 'roy_dev'&#10;&#10;# Conflicts:&#10;#&#9;.gitignore&#10;#&#9;README.md&#10;#&#9;package-lock.json&#10;#&#9;package.json&#10;#&#9;src/Form.js&#10;#&#9;src/MyMap.js&#10;#&#9;src/Table.js&#10;#&#9;src/primitiveUI.css">
+      <created>1641829627068</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1641829627068</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,7 +190,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Merge" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
         <entry key="d13128b8-2a7f-4dcc-a996-1e7ff4f0302a">
@@ -257,6 +253,8 @@
     <MESSAGE value="better alerts + loc button" />
     <MESSAGE value="auto/manual entry tag, updated web favicon, form &amp; g.sheets cleanup" />
     <MESSAGE value="Merge remote-tracking branch 'origin/oscar_dev'" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/oscar_dev'" />
+    <MESSAGE value="Merge Roy/Main" />
+    <MESSAGE value="Merge branch 'roy_dev'&#10;&#10;# Conflicts:&#10;#&#9;.gitignore&#10;#&#9;README.md&#10;#&#9;package-lock.json&#10;#&#9;package.json&#10;#&#9;src/Form.js&#10;#&#9;src/MyMap.js&#10;#&#9;src/Table.js&#10;#&#9;src/primitiveUI.css" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'roy_dev'&#10;&#10;# Conflicts:&#10;#&#9;.gitignore&#10;#&#9;README.md&#10;#&#9;package-lock.json&#10;#&#9;package.json&#10;#&#9;src/Form.js&#10;#&#9;src/MyMap.js&#10;#&#9;src/Table.js&#10;#&#9;src/primitiveUI.css" />
   </component>
 </project>
