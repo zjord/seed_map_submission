@@ -21,3 +21,7 @@ oscar_dev:
 
 jem_dev:
 + webapp now belongs in a museum, it's beautiful
+
+Merge:
++ Merged Roy_dev with Main to implement backend and front end
++ Added image hosting and insertion to google sheets and cloudinary

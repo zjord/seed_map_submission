@@ -4,13 +4,13 @@ import React, {Component} from "react";
 import axios from 'axios';
 import Swal from "sweetalert2";
 
-
-
 export default class Form extends Component { // Form: class component
     initialState = {
         col: '',
         lat: '',
         lon: '',
+        img: '',
+        imgurl: '',
         time: '',
         autoloc: '',
         temp: '',
@@ -24,8 +24,22 @@ export default class Form extends Component { // Form: class component
     }
 
     handleImgChange = e => {
-        const img = e.target.files[0]
-        this.setState({img: img})
+        const image = e.target.files[0]
+        const pic = new FormData()
+        pic.append("file", image)
+        pic.append("upload_preset", "dandelion")
+        pic.append("cloud_name","zjordseeds")
+        fetch("  https://api.cloudinary.com/v1_1/zjordseeds/image/upload",{
+            method:"post",
+            body: pic
+        })
+            .then(resp => resp.json())
+            .then(pic => {
+           //     this.state.imgurl = pic.url
+                this.setState({imgurl: pic.url})
+            })
+            .catch(err => console.log(err))
+        this.setState({img: image})
     }
 
     //TODO fix popup disappearing when pressing enter
@@ -100,6 +114,7 @@ export default class Form extends Component { // Form: class component
                         autoloc: this.state.autoloc,
                         temp: this.state.temp,
                         hum: this.state.hum,
+                        imgurl: this.state.imgurl
                     }
                 }).catch(err => console.log(err));
 
@@ -134,7 +149,7 @@ export default class Form extends Component { // Form: class component
     }
 
     render() {
-        const {col, lat, lon,time} = this.state; //img unused
+        const {col, lat, lon,time} = this.state;
 
         return (
             <form action="/submit" onSubmit={this.submitForm}>

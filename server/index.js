@@ -10,7 +10,7 @@ const {GoogleSpreadsheet} = require('google-spreadsheet');
 const creds = require('./client_secret.json');
 const doc = new GoogleSpreadsheet('1laEZJYS1Tf8mr6k5gDk3rKlZhngPqJv79EbZdzYxkvo'); //initialise the entire googlespreadsheet document
 
-async function accessSpreadsheet(col, lat, lon, time, autoloc, temp, hum){
+async function accessSpreadsheet(col, lat, lon, time, autoloc, temp, hum, imgurl){
 	await doc.useServiceAccountAuth(creds); //initialise auth
 	await doc.loadInfo(); //loads entire doc and worksheets
 	const sheet = doc.sheetsByIndex[0]; //initilise first worksheet to const sheet
@@ -25,7 +25,8 @@ async function accessSpreadsheet(col, lat, lon, time, autoloc, temp, hum){
 		Time: time,
 		Temperature: temp,
 		Humidity: hum,
-		Auto: autoloc
+		Auto: autoloc,
+		Image: '=IMAGE("' + imgurl + '", 1)'
 		},
 		{insert: true}); //prevents entries overwriting each other, in theory
 	//from https://github.com/theoephraim/node-google-spreadsheet/issues/316
@@ -96,7 +97,7 @@ app.post("/submit", (req, res) => {
 	// Handle your request as if no errors happened
 	
 	(async function () {
-		await accessSpreadsheet(req.body.inst.col, req.body.inst.lat, req.body.inst.lon, req.body.inst.time, req.body.inst.autoloc,req.body.inst.temp,req.body.inst.hum)
+		await accessSpreadsheet(req.body.inst.col, req.body.inst.lat, req.body.inst.lon, req.body.inst.time, req.body.inst.autoloc,req.body.inst.temp,req.body.inst.hum, req.body.inst.imgurl)
 		.then(res.send("SUCCESS"))
 		.catch(err=>{
 		res.send(err);});
