@@ -30,21 +30,21 @@ async function accessSpreadsheet(col, lat, lon, time, autoloc, temp, hum, imgurl
 	//from https://github.com/theoephraim/node-google-spreadsheet/issues/316
 
 
-   //Reads in the CURRENT rows in database, if placed before addrow will only read data prior to initialisation
-   const rows = await sheet.getRows();
-   rows.forEach(row => {printShiz(row)})
-
-
-	//print values from table
-	function printShiz(shiz) {
-		console.log(
-			'Coordinates: ', shiz.Latitude, '-', shiz.Longitude, "\n",
-			'Colour: ', shiz.Colour, "\n",
-			'Date: ', shiz.Time, "\n",
-			'Auto/Manual: ', shiz.Auto, "\n",
-			'------------------');
-	}
-}
+//    //Reads in the CURRENT rows in database, if placed before addrow will only read data prior to initialisation
+//    const rows = await sheet.getRows();
+//    rows.forEach(row => {printShiz(row)})
+//
+//
+// 	//print values from table
+// 	function printShiz(shiz) {
+// 		console.log(
+// 			'Coordinates: ', shiz.Latitude, '-', shiz.Longitude, "\n",
+// 			'Colour: ', shiz.Colour, "\n",
+// 			'Date: ', shiz.Time, "\n",
+// 			'Auto/Manual: ', shiz.Auto, "\n",
+// 			'------------------');
+// 	}
+ }
 
 app.use( express.json() );
 

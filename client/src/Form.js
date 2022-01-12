@@ -1,4 +1,5 @@
 // based on tutorial from https://www.taniarascia.com/getting-started-with-react/
+// imageupload based from https://medium.com/geekculture/how-to-upload-images-to-cloudinary-with-a-react-app-f0dcc357999c
 //using openweathermap api: visit https://openweathermap.org/weather-data for more weather api information
 import React, {Component} from "react";
 import axios from 'axios';
@@ -23,6 +24,7 @@ export default class Form extends Component { // Form: class component
         this.setState({[name]: value})
     }
 
+    //uploads image to cloudinary
     handleImgChange = e => {
         const image = e.target.files[0]
         const pic = new FormData()
@@ -35,11 +37,10 @@ export default class Form extends Component { // Form: class component
         })
             .then(resp => resp.json())
             .then(pic => {
-           //     this.state.imgurl = pic.url
                 this.setState({imgurl: pic.url})
             })
             .catch(err => console.log(err))
-        this.setState({img: image})
+        this.setState({img: image}) //avoids invalid submission
     }
 
     //TODO fix popup disappearing when pressing enter
@@ -81,6 +82,7 @@ export default class Form extends Component { // Form: class component
         )
     }
 
+    //validates entry and sends data to google sheets database with temp&humid data
     submitForm = async (e) => {
         if ( (this.state.lat && this.state.lon && this.state.img) === '' ){ //this.state.time && this.state.col
             Swal.fire({
