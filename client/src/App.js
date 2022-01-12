@@ -5,7 +5,6 @@ import Table from './Table'
 import Form from "./Form";
 import logo from "./static/assets/jemilicious_logo.png"
 import dandelion from './static/Icon/dandelion_icon.png'
-import {AddMarkers} from "./markers";
 import {MapContainer, Marker, TileLayer} from 'react-leaflet';
 import "leaflet/dist/leaflet.css";
 import {Icon} from "leaflet/dist/leaflet-src.esm";
