@@ -55,7 +55,7 @@ app.use( express.urlencoded({
 // Have Node serve the files for our built React app
 app.use(express.static(path.resolve(__dirname, '../client/build')));
 
-/-------------ROUTE HANDLERS-------------/
+//-------------ROUTE HANDLERS-------------//
 
 // Handle POST requests to /submit route
 app.post("/submit", (req, res) => {
