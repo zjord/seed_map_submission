@@ -4,21 +4,24 @@ import React, {Component} from 'react'
 import Table from './Table'
 import Form from "./Form";
 import logo from "./static/assets/jemilicious_logo.png"
-import dandelion from './static/Icon/dandelion_icon.png'
+import dandelion from './static/Icon/dandelion_icon_colored.png'
 import {AddMarkers} from "./markers";
 import {MapContainer, Marker, TileLayer} from 'react-leaflet';
 import "leaflet/dist/leaflet.css";
 import {Icon} from "leaflet/dist/leaflet-src.esm";
 
+
+
+
 export default class App extends Component {
     state = {
         dData: [], //dandelionData
-        marker: []
+        marker: [],
     }
 
-    // componentDidMount() { //Use AddMarkers to grab coordinates from google sheets, set marker state to array of coords
-    //     AddMarkers().then(r=>this.setState({marker: r}))
-    // }
+     componentDidMount() { //Use AddMarkers to grab coordinates from google sheets, set marker state to array of coords
+         AddMarkers().then(r=>this.setState({marker: r}))
+     }
 
     remove_dData = index => {
         const {dData} = this.state.dData

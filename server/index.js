@@ -3,9 +3,7 @@
 const path = require('path');
 const express = require("express");
 const {validationResult} = require('express-validator');
-const PORT =  3000;//process.env.PORT ||
 const app = express();
-
 const {GoogleSpreadsheet} = require('google-spreadsheet');
 const creds = require('./client_secret.json');
 const doc = new GoogleSpreadsheet('1laEZJYS1Tf8mr6k5gDk3rKlZhngPqJv79EbZdzYxkvo'); //initialise the entire googlespreadsheet document
@@ -48,33 +46,16 @@ async function accessSpreadsheet(col, lat, lon, time, autoloc, temp, hum, imgurl
 	}
 }
 
-//get all coordinates from googlesheets
-async function getCoords(){
-	await doc.useServiceAccountAuth(creds); //initialise auth
-	await doc.loadInfo(); //loads entire doc and worksheets
-	const sheet = doc.sheetsByIndex[0]; //initilise first worksheet to const sheet
-	
-	const rows = await sheet.getRows();
-	let coords = []
-	rows.forEach(row => {
-			coords.push({lat:row.Latitude, lon:row.Longitude});
-	 })
-	
-}
-
-
 app.use( express.json() );
 
 app.use( express.urlencoded({
 	extended: true
 }));
 
-
 // Have Node serve the files for our built React app
 app.use(express.static(path.resolve(__dirname, '../client/build')));
 
-
-//ROUTE HANDLERS
+/-------------ROUTE HANDLERS-------------/
 
 // Handle POST requests to /submit route
 app.post("/submit", (req, res) => {
@@ -106,13 +87,34 @@ app.post("/submit", (req, res) => {
 	
 });
 
+// Handles GET request for seed coordinates
+app.get('/seeds', (req, res) =>{
 
-//All other GET requests not handled before will return our React app
+	let coords = [];
+
+	(async function () {
+		await doc.useServiceAccountAuth(creds); //initialise auth
+		await doc.loadInfo(); //loads entire doc and worksheets
+		const sheet = doc.sheetsByIndex[0]; //initilise first worksheet to const sheet
+
+
+		const rows = await sheet.getRows();
+		rows.forEach(row => {
+			coords.push([row.Latitude, row.Longitude])
+		})
+
+		res.send(coords);
+	})();
+
+})
+
+// All other GET requests not handled before will return our React app
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+  	res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 });
 
-
+// Listening port number
+const PORT =  3000;//process.env.PORT ||
 app.listen(PORT, () => {
   console.log(`Server listening on http://localhost:${PORT}`);
 })
