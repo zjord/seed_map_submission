@@ -85,7 +85,7 @@ export default class App extends Component {
                         icon = { new Icon({
                             iconUrl: dandelion,
                             iconRetinaUrl: dandelion,
-                            iconSize: [65,65]
+                            iconSize: [10,65]
                             //TODO change icon anchor
                              })}
                         /> )}
