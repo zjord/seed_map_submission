@@ -9,34 +9,22 @@ import {MapContainer, Marker, TileLayer} from 'react-leaflet';
 import "leaflet/dist/leaflet.css";
 import {Icon} from "leaflet/dist/leaflet-src.esm";
 
-
-
-
 export default class App extends Component {
     state = {
         dData: [], //dandelionData
         marker: [],
     }
-
-     componentDidMount() { //Use AddMarkers to grab coordinates from google sheets, set marker state to array of coords
+    
+     componentDidMount() { //Use AddMarkers to grab coordinates from Google sheets, set marker state to array of coords
          AddMarkers().then(r=>this.setState({marker: r}))
      }
 
-    remove_dData = index => {
-        const {dData} = this.state.dData
-        this.setState({
-            dData: dData.filter((cdData, i) => {
-                return i !== index;
-            })
-        });
-    }
     handleSubmit = (cdData) => { //current dandelionData
         this.setState({
             dData: [...this.state.dData, cdData],
           })
     }
     render() {
-        const {dData} = this.state
         return (
             <div className="container" style={{"padding-top": '2em'}}>
                     {/*logo, title and imperial college london 2021/2022*/}
@@ -81,8 +69,8 @@ export default class App extends Component {
                         icon = { new Icon({
                             iconUrl: dandelion,
                             iconRetinaUrl: dandelion,
-                            iconSize: [10,65]
-                            //TODO change icon anchor
+                            iconSize: [65,65],
+                            iconAnchor: [10,65] //makes dandelion shoot the tip of the pin
                              })}
                         /> )}
                 </MapContainer>

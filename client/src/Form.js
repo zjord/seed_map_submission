@@ -13,7 +13,8 @@ export default class Form extends Component { // Form: class component
         img: '',
         imgurl: '',
         time: '',
-        autoloc: '',
+        date: '',
+        autoloc: 'Manual',
         temp: '',
         hum: ''
     }
@@ -27,26 +28,23 @@ export default class Form extends Component { // Form: class component
     //uploads image to cloudinary
     handleImgChange = e => {
         const image = e.target.files[0]
-        const pic = new FormData()
-        pic.append("file", image)
-        pic.append("upload_preset", "dandelion")
-        pic.append("cloud_name","zjordseeds")
-        fetch("  https://api.cloudinary.com/v1_1/zjordseeds/image/upload",{
-            method:"post",
-            body: pic
-        })
-            .then(resp => resp.json())
-            .then(pic => {
-                this.setState({imgurl: pic.url})
+        //TODO upload image to cloudinary only on SubmitForm
+            const pic = new FormData()
+            pic.append("file", image)
+            pic.append("upload_preset", "dandelion")
+            pic.append("cloud_name","zjordseeds")
+            fetch("  https://api.cloudinary.com/v1_1/zjordseeds/image/upload",{
+                method:"post",
+                body: pic
             })
-            .catch(err => console.log(err))
+                .then(resp => resp.json())
+                .then(pic => {
+                    this.setState({imgurl: pic.url})
+                })
+                .catch(err => console.log(err))
         this.setState({img: image}) //avoids invalid submission
     }
 
-    //TODO fix popup disappearing when pressing enter
-    handleKeypress = e => {
-        if (e.keyCode === 13){ this.submitForm() }
-    }
 
     grabLocation = () => {
         navigator.geolocation.getCurrentPosition(
@@ -94,6 +92,10 @@ export default class Form extends Component { // Form: class component
         }
         else {
 			e.preventDefault();
+
+            console.log("State right before submission")
+            console.log(this.state)
+
             this.props.handleSubmit(this.state);
             let inst = [];
             const API_key = '39f0b3d543c797a3eeecd77ddd38cf51';
@@ -113,6 +115,7 @@ export default class Form extends Component { // Form: class component
                         lat: this.state.lat,
                         lon: this.state.lon,
                         time: this.state.time,
+                        date: this.state.date,
                         autoloc: this.state.autoloc,
                         temp: this.state.temp,
                         hum: this.state.hum,
@@ -142,8 +145,10 @@ export default class Form extends Component { // Form: class component
                         icon: "warning",
                     }).then()
 				}
-
 			});
+
+            console.log("State right after axios.post")
+            console.log(this.state)
 			
         }
         this.setState(this.initialState) // clears form
@@ -151,34 +156,34 @@ export default class Form extends Component { // Form: class component
     }
 
     render() {
-        const {col, lat, lon,time} = this.state;
+        const {col, lat, lon,time,date} = this.state;
+
 
         return (
-            <form action="/submit" onSubmit={this.submitForm}>
+            <form>
                 <label htmlFor="col">Colour</label>
                 <input
                     type="text"
                     name="col"
                     id="col"
                     value={col}
-                    onChange={this.handleDataChange}
-                    onKeyDown={this.handleKeypress}/>
+                    onChange={this.handleDataChange}/>
+
                 <label htmlFor="lat">Latitude</label>
                 <input
                     type="text"
                     name="lat"
                     id="lat"
                     value={lat}
-                    onChange={this.handleDataChange}
-                    onKeyDown={this.handleKeypress}/>
+                    onChange={this.handleDataChange}/>
+
                 <label htmlFor="lon">Longitude</label>
                 <input
                     type="text"
                     name="lon"
                     id="lon"
                     value={lon}
-                    onChange={this.handleDataChange}
-                    onKeyDown={this.handleKeypress}/>
+                    onChange={this.handleDataChange}/>
                 <input
                     type="button"
                     name="locB"
@@ -191,8 +196,15 @@ export default class Form extends Component { // Form: class component
                     name="time"
                     id="time"
                     value={time}
-                    onChange={this.handleDataChange}
-                    onKeyDown={this.handleKeypress}/>
+                    onChange={this.handleDataChange}/>
+
+                <label htmlFor="date">Date</label>
+                <input
+                    type="date"
+                    name="date"
+                    id="date"
+                    value={date}
+                    onChange={this.handleDataChange}/>
 
                 <label htmlFor="img">Image</label>
                 <input
