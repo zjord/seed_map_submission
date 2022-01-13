@@ -28,23 +28,8 @@ export default class Form extends Component { // Form: class component
     //uploads image to cloudinary
     handleImgChange = e => {
         const image = e.target.files[0]
-        //TODO upload image to cloudinary only on SubmitForm
-            const pic = new FormData()
-            pic.append("file", image)
-            pic.append("upload_preset", "dandelion")
-            pic.append("cloud_name","zjordseeds")
-            fetch("  https://api.cloudinary.com/v1_1/zjordseeds/image/upload",{
-                method:"post",
-                body: pic
-            })
-                .then(resp => resp.json())
-                .then(pic => {
-                    this.setState({imgurl: pic.url})
-                })
-                .catch(err => console.log(err))
         this.setState({img: image}) //avoids invalid submission
     }
-
 
     grabLocation = () => {
         navigator.geolocation.getCurrentPosition(
@@ -82,7 +67,7 @@ export default class Form extends Component { // Form: class component
 
     //validates entry and sends data to google sheets database with temp&humid data
     submitForm = async (e) => {
-        if ( (this.state.lat && this.state.lon && this.state.img) === '' ){ //this.state.time && this.state.col
+        if ( (this.state.lat && this.state.lon && this.state.img && this.state.time && this.state.col && this.state.date) === '' ){
             Swal.fire({
                 title: "Warning",
                 text: "You missed out vital info!",
@@ -93,24 +78,47 @@ export default class Form extends Component { // Form: class component
         else {
 			e.preventDefault();
 
-            console.log("State right before submission")
-            console.log(this.state)
+            // uploads image to cloudinary for hosting to google sheets
+            const pic = new FormData()
+            pic.append("file", this.state.img)
+            pic.append("upload_preset", "dandelion")
+            pic.append("cloud_name","zjordseeds")
+            await fetch("https://api.cloudinary.com/v1_1/zjordseeds/image/upload",{
+                method:"post",
+                body: pic
+            })
+                .then(resp => resp.json())
+                .then(pic => {
+                    this.setState({imgurl: pic.url})
+                })
+                .catch(err => console.log(err))
 
-            this.props.handleSubmit(this.state);
-            let inst = [];
-            const API_key = '39f0b3d543c797a3eeecd77ddd38cf51';
-            const url = `https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${this.state.lat}&lon=${this.state.lon}&appid=${API_key}`;//note units=metric
-            console.log(url);
+            if (this.state.imgurl === '' ){
+                Swal.fire({
+                    title: "Unable to upload image",
+                    html: "Try again",
+                    icon: "warning",
+                }).then(/*empty promise*/)
+            }
+            else {
+                console.log("State right before submission")
+                console.log(this.state)
 
-            //get weather api: temperature and humidity
-            await axios.get(url).then(res => {
+                this.props.handleSubmit(this.state);
+                let inst = [];
+                const API_key = '39f0b3d543c797a3eeecd77ddd38cf51';
+                const url = `https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${this.state.lat}&lon=${this.state.lon}&appid=${API_key}`;//note units=metric
+                console.log(url);
+
+                //get weather api: temperature and humidity
+                await axios.get(url).then(res => {
                     console.log(res.data);
                     this.setState({
                         temp: res.data.main.temp,
                         hum: res.data.main.humidity,
                     });
                     //cloned instance of submission object (axios doesn't accept state object)
-                     inst = {
+                    inst = {
                         col: this.state.col,
                         lat: this.state.lat,
                         lon: this.state.lon,
@@ -124,32 +132,31 @@ export default class Form extends Component { // Form: class component
                 }).catch(err => console.log(err));
 
 
-            console.log(inst);//test1
+                console.log(inst);//test1
 
-			//POST request to server endpoint /submit
-			await axios.post('/submit', {inst} ).then( (res) => {
-				console.log(res);
-				console.log(res.data);
+                //POST request to server endpoint /submit
+                await axios.post('/submit', {inst}).then((res) => {
+                    console.log(res);
+                    console.log(res.data);
 
-				if(res.data === "SUCCESS"){
-                    Swal.fire({
-                        title: "Entry submitted",
-                        html: "Thank you for your submission! <br> You can find your own pin in the map below <br> (Reload the website to see changes)",
-                        icon: "success",
-                    }).then(/*empty promise*/)
-				}
-				else{
-					Swal.fire({
-                        title:"Server connection went wrong",
-                        html: "Try again later",
-                        icon: "warning",
-                    }).then()
-				}
-			});
+                    if (res.data === "SUCCESS") {
+                        Swal.fire({
+                            title: "Entry submitted",
+                            html: "Thank you for your submission! <br> You can find your own pin in the map below <br> (Reload the website to see changes)",
+                            icon: "success",
+                        }).then(/*empty promise*/)
+                    } else {
+                        Swal.fire({
+                            title: "Server connection went wrong",
+                            html: "Try again later",
+                            icon: "warning",
+                        }).then()
+                    }
+                });
 
-            console.log("State right after axios.post")
-            console.log(this.state)
-			
+                console.log("State right after axios.post")
+                console.log(this.state)
+            }
         }
         this.setState(this.initialState) // clears form
         document.getElementById('fileB').value= null; // resets fileButton text to "No file chosen"
@@ -212,7 +219,8 @@ export default class Form extends Component { // Form: class component
                     type="file"
                     id="fileB"
                     capture="environment" //enable mobile external camera instead of file selection
-                    onChange={this.handleImgChange}/>
+                    onChange={this.handleImgChange}
+                />
 
                 <input
                     type="button"
