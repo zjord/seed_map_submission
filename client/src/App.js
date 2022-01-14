@@ -38,7 +38,7 @@ export default class App extends Component {
                 <div className={'horizontal'} style={{"margin-top":'1em',"margin-bottom":'2em'}}/>
                 <p  style={{"margin-right":'1em', "font-weight":'bold'}}> ABOUT</p>
                 <p style={{"margin-left":'1em',"margin-right":'1em','margin-botton':'1em'}}> The goal of this website is to collect data from the general public about the location of dandelion seeds all released from our
-                    lab at Imperial College London.<br/><br/> Nature has invented ways many ways to fly however unlike the muscle based flight of animals, plants have developed
+                    lab at Imperial College London.<br/><br/> Nature has invented many ways to fly however unlike the muscle based flight of animals, plants have developed
                     clever structural designs to utilise wind. We want to track dandelion seeds by painting them a bright colour for you to find and input into this website.</p>
                     <a style={{'margin':'2em'}} href="https://www.bfflab.org/research.html" className="button">READ MORE</a>
 
