@@ -4,7 +4,6 @@
   "private": true,
   "author": "ZJORD",
   "license": "ISC",
-  "proxy": "http://localhost:3000",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^11.2.7",
