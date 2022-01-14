@@ -28,7 +28,19 @@ export default class Form extends Component { // Form: class component
     //uploads image to cloudinary
     handleImgChange = e => {
         const image = e.target.files[0]
-        this.setState({img: image}) //avoids invalid submission
+        console.log(image.size)
+        if (image.size >= 15000000) {
+            Swal.fire({
+                title: "Warning",
+                text: "File size is too large!(Smaller than 15MB)",
+                icon: "warning",
+            }).then(/*empty promise*/)
+            this.setState({img: this.initialState.img}) // clears img state
+            document.getElementById('fileB').value= null; // resets fileButton text to "No file chosen"
+        }
+        else {
+            this.setState({img: image}) //avoids invalid submission
+        }
     }
 
     grabLocation = () => {
