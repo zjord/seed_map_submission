@@ -25,14 +25,30 @@ export default class Form extends Component { // Form: class component
         this.setState({[name]: value})
     }
 
+    // handleColChange = e => {
+    //     const {colour, value} = e.target
+    //     if(colour.length > 12 && (!/^[a-zA-Z]+$/.test(colour))){// Input validation: checks length and makes sure colour string is purely alphabetical
+    //         Swal.fire({
+    //             title: "Warning",
+    //             text: "That wasn't a valid colour!",
+    //             confirmButtonText: "Let me double check",
+    //             icon: "warning",
+    //         }).then(/*empty promise*/)
+    //     }
+    //     else {
+    //         this.setState({col: value})
+    //     }
+    // }
+
     //uploads image to cloudinary
     handleImgChange = e => {
         const image = e.target.files[0]
+        console.log('Image size: ')
         console.log(image.size)
         if (image.size >= 15000000) {
             Swal.fire({
                 title: "Warning",
-                text: "File size is too large!(Smaller than 15MB)",
+                text: "File size is too large!(Must be smaller than 15MB)",
                 icon: "warning",
             }).then(/*empty promise*/)
             this.setState({img: this.initialState.img}) // clears img state
@@ -88,14 +104,14 @@ export default class Form extends Component { // Form: class component
                 icon: "warning",
             }).then(/*empty promise*/)
         }
-        else if(this.state.col.length > 10){// Input validation: checks length and makes sure colour string is purely alphabetical
-            Swal.fire({
-                title: "Warning",
-                text: "That wasn't a valid colour!",
-                confirmButtonText: "Let me double check",
-                icon: "warning",
-            }).then(/*empty promise*/)
-        }
+        // else if(this.state.col.length > 12 && (!/^[a-zA-Z]+$/.test(this.state.col))){// Input validation: checks length and makes sure colour string is purely alphabetical
+        //     Swal.fire({
+        //         title: "Warning",
+        //         text: "That wasn't a valid colour!",
+        //         confirmButtonText: "Let me double check",
+        //         icon: "warning",
+        //     }).then(/*empty promise*/)
+        // }
         else {
             e.preventDefault();
 
@@ -121,20 +137,20 @@ export default class Form extends Component { // Form: class component
                     icon: "warning",
                 }).then(/*empty promise*/)
             }
+            else {
+                let inst = [];
+                this.props.handleSubmit(this.state);
+                const API_key = '39f0b3d543c797a3eeecd77ddd38cf51';
+                const unixTime = parseInt((new Date('2022.01.13').getTime() / 1000).toFixed(0))
+                const url = `https://api.openweathermap.org/data/2.5/onecall/timemachine?units=metric&lat=${this.state.lat}&lon=${this.state.lon}&dt=${unixTime}&appid=${API_key}`
+                //const url = `https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${this.state.lat}&lon=${this.state.lon}&appid=${API_key}`;//note units=metric
+                console.log(url);
+                console.log("State right before submission")
+                console.log(this.state)
 
-            let inst = [];
-            this.props.handleSubmit(this.state);
-            const API_key = '39f0b3d543c797a3eeecd77ddd38cf51';
-            const unixTime = parseInt((new Date('2022.01.13').getTime() / 1000).toFixed(0))
-            const url = `https://api.openweathermap.org/data/2.5/onecall/timemachine?units=metric&lat=${this.state.lat}&lon=${this.state.lon}&dt=${unixTime}&appid=${API_key}`
-            //const url = `https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${this.state.lat}&lon=${this.state.lon}&appid=${API_key}`;//note units=metric
-            console.log(url);
-            console.log("State right before submission")
-            console.log(this.state)
 
-
-            //get weather api: temperature and humidity
-            await axios.get(url).then(res => {
+                //get weather api: temperature and humidity
+                await axios.get(url).then(res => {
                     console.log(res.data);
                     this.setState({
                         temp: res.data.main.temp,
@@ -154,7 +170,7 @@ export default class Form extends Component { // Form: class component
                     }
                 }).catch(err => console.log(err));
 
-            console.log(inst);//test1
+                console.log(inst);//test1
 
                 //POST request to server endpoint /submit
                 await axios.post('/submit', {inst}).then((res) => {
@@ -178,7 +194,7 @@ export default class Form extends Component { // Form: class component
 
                 console.log("State right after axios.post")
                 console.log(this.state)
-            
+            }
         }
         this.setState(this.initialState) // clears form
         document.getElementById('fileB').value= null; // resets fileButton text to "No file chosen"
