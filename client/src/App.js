@@ -1,5 +1,4 @@
 // based on tutorial from https://www.taniarascia.com/getting-started-with-react/
-// TODO investigate dependence on "public" folder (eg, index.html)
 import React, {Component} from 'react'
 import Form from "./Form";
 import logo from "./static/assets/jemilicious_logo.png"
@@ -12,18 +11,17 @@ import {Icon} from "leaflet/dist/leaflet-src.esm";
 export default class App extends Component {
     state = {
         dData: [], //dandelionData
-        marker: [],
+        marker: [], //markerData from gsheets database
     }
 
-     componentDidMount() { //Use AddMarkers to grab coordinates from google sheets, set marker state to array of coords
+     componentDidMount() { //Use AddMarkers to grab coordinates from gsheets, set marker state to array of coords
          AddMarkers().then(r => {
              this.setState({marker: r});
-             console.log(r)
+             // console.log(r) // testing marker data
          })
      }
 
-
-    handleSubmit = (cdData) => { //current dandelionData
+    handleSubmit = (cdData) => { // cdData = current dandelionData
         this.setState({
             dData: [...this.state.dData, cdData],
           })
@@ -34,7 +32,7 @@ export default class App extends Component {
                     {/*logo, title and imperial college london 2021/2022*/}
                 <img className={'img inline'}  src={logo} alt={"logo"}/>    {/*inline logo*/}
                 <h1 className={'small inline'}>Dandelion Seed Mapping Project</h1>      {/*small capitals inline title*/}
-                <p className={'inline'}>ZJORD, Imperial College 2021/22<br/></p>     {/*inline text*/}
+                <p className={'inline'}>Imperial College 2021/22<br/></p>     {/*inline text*/}
 
                 {/*about section*/}
                 <div className={'horizontal'} style={{"margin-top":'1em',"margin-bottom":'2em'}}/>
@@ -74,15 +72,13 @@ export default class App extends Component {
                             iconUrl: dandelion,
                             iconRetinaUrl: dandelion,
                             iconSize: [65,65],
-                            iconAnchor: [10,65] //makes dandelion shoot the tip of the pin
+                            iconAnchor: [10,65] // anchors dandelion by the stem
                              })}
                         /> )}
                 </MapContainer>
                 <div className={'horizontal'} style={{"margin-top":'1em',"margin-bottom":'1em'}}/>
                 <footer>
-                    <p>
-                        Imperial College London Bioengineering Department: A Year 3 Undergraduate Project
-                    </p>
+                    <p> Imperial College London Bioengineering Department: A Year 3 Undergraduate Project, by ZJORD</p>
                 </footer>
             </div>
         )

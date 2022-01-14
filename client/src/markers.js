@@ -1,4 +1,3 @@
-
 import axios from "axios";
 
 export async function AddMarkers() {
@@ -6,9 +5,7 @@ export async function AddMarkers() {
     await axios.get('/seeds')
         .then((res) => {
             markers = res.data;
-            console.log(res);
+            // console.log(res);
         }).catch(err => console.log(err));
-
-
     return markers;
 }

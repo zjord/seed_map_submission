@@ -25,11 +25,10 @@ export default class Form extends Component { // Form: class component
         this.setState({[name]: value})
     }
 
-    //uploads image to cloudinary
-    handleImgChange = e => {
+    handleImgChange = e => { //uploads image to cloudinary
         const image = e.target.files[0]
-        console.log('Image size: ')
-        console.log(image.size)
+        // console.log('Image size: ')
+        // console.log(image.size)
         if (image.size >= 15000000) {
             Swal.fire({
                 title: "Warning",
@@ -44,7 +43,7 @@ export default class Form extends Component { // Form: class component
         }
     }
 
-    grabLocation = () => {
+    grabLocation = () => { //grabs the user's location ... duh
         navigator.geolocation.getCurrentPosition(
             success => {
                 Swal.fire({
@@ -59,7 +58,7 @@ export default class Form extends Component { // Form: class component
                     })
                 })
             },
-            error => {
+            () => {
                 Swal.fire({
                     title: "Error!",
                     html: 'Pro Tip: Reset your device\'s permissions and reload the website.<br>' +
@@ -68,8 +67,6 @@ export default class Form extends Component { // Form: class component
                     footer: 'Pro Tip 2: Use Google Maps to find the approx coordinates',
                     icon: "error",
                 }).then(() => {
-                    console.log("Error while grabbing user's loc:")
-                    console.log(error)
                     this.setState({
                         autoloc: 'Manual'
                     })
@@ -78,8 +75,7 @@ export default class Form extends Component { // Form: class component
         )
     }
 
-    //validates entry and sends data to google sheets database with temp&humid data
-    submitForm = async (e) => {
+    submitForm = async (e) => { //validates entry and sends data to google sheets database with temp&humid data
         
         if ( (this.state.lat && this.state.lon && this.state.img && this.state.time && this.state.col && this.state.date) === '' ){
             Swal.fire({
@@ -89,7 +85,8 @@ export default class Form extends Component { // Form: class component
                 icon: "warning",
             }).then(/*empty promise*/)
         }
-        else if(this.state.col.length > 16 || (!/^[a-zA-Z]+$/.test(this.state.col))){// Input validation: checks length and makes sure colour string is purely alphabetical
+        // Input validation: checks length and makes sure colour string is purely alphabetical
+        else if(this.state.col.length > 16 || (!/^[a-zA-Z]+$/.test(this.state.col))){
             Swal.fire({
                 title: "Warning",
                 text: "That wasn't a valid colour!",
@@ -106,7 +103,14 @@ export default class Form extends Component { // Form: class component
             }).then(/*empty promise*/)
         }
         else {
-            e.preventDefault();
+
+            Swal.fire({
+                didOpen: () => { Swal.showLoading()},
+                title: "Loading...",
+                footer: "If you are submitting from a mobile device, it might take a bit to submit - please be patient"
+            }).then(/*empty promise*/)
+
+            e.preventDefault ();
 
             // uploads image to cloudinary for hosting to google sheets
             const pic = new FormData()
@@ -135,26 +139,23 @@ export default class Form extends Component { // Form: class component
                 this.props.handleSubmit(this.state);
                 let API_key = '';
 
-                await axios.get("/key").then(res=>{// GET request for weather api key
+                await axios.get("/key").then(res=>{ // GET request for weather api key
                     API_key =  res.data.key;
                 }).catch(err=>{console.log(err)})
 
-                console.log("State right before submission")//test1
+                // console.log("State right before submission")//test1
 
                 //const unixTime = parseInt((new Date('2022.01.13').getTime() / 1000).toFixed(0))
                 //const url = `https://api.openweathermap.org/data/2.5/onecall/timemachine?units=metric&lat=${this.state.lat}&lon=${this.state.lon}&dt=${unixTime}&appid=${API_key}`
                 const url = `https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${this.state.lat}&lon=${this.state.lon}&appid=${API_key}`;//note units=metric
 
-
-                //get weather api: temperature and humidity
-                await axios.get(url).then(res => {
-                    console.log(res.data);
+                await axios.get(url).then(res => { //get weather api: temperature and humidity
+                    // console.log(res.data);
                     this.setState({
                         temp: res.data.main.temp,
                         hum: res.data.main.humidity,
                     });
-                    //cloned instance of submission object (axios doesn't accept state object)
-                    inst = {
+                    inst = { //cloned instance of submission object (axios doesn't accept state object)
                         col: this.state.col,
                         lat: this.state.lat,
                         lon: this.state.lon,
@@ -166,8 +167,7 @@ export default class Form extends Component { // Form: class component
                         imgurl: this.state.imgurl
                     }
                 }).catch(err => console.log(err));
-
-                console.log(inst);//test1
+                // console.log(inst);//test1
 
                 if ( (this.state.temp && this.state.hum) === '' ){
                     Swal.fire({
@@ -180,13 +180,15 @@ export default class Form extends Component { // Form: class component
                 else{
                     //POST request to server's /submit endpoint
                     await axios.post('/submit', {inst}).then((res) => {
-                        console.log(res);
-                        console.log(res.data);
+                        // console.log(res);
+                        // console.log(res.data);
 
-                        if (res.data === "SUCCESS") {//Success validator
+                        if (res.data === "SUCCESS") { //Success validator
                             Swal.fire({
                                 title: "Entry submitted",
-                                html: "Thank you for your submission! <br> You can find your own pin in the map below <br> (Reload the website to see changes)",
+                                html: "Thank you for your submission! <br>" +
+                                    " You can find your own pin in the map below " +
+                                    "<br> (Reload the website to see changes)",
                                 icon: "success",
                             }).then(/*empty promise*/)
                         } else {
@@ -197,8 +199,8 @@ export default class Form extends Component { // Form: class component
                             }).then()
                         }
                     });
-                    console.log("State right after axios.post")
-                    console.log(this.state)
+                    // console.log("State right after axios.post")
+                    // console.log(this.state)
                 }
 
             }
@@ -209,7 +211,6 @@ export default class Form extends Component { // Form: class component
 
     render() {
         const {col, lat, lon,time,date} = this.state;
-
 
         return (
             <form>
@@ -245,10 +246,9 @@ export default class Form extends Component { // Form: class component
                     name="locB"
                     value="Use my location!"
                     onClick={this.grabLocation}/>
-
                 <p style={{'border':'2px', 'border-style':'solid', 'border-color':'black','padding': '0.5em', 'margin':'1em'}}>
                     DISCLAIMER: this location data is only used to track where you found the dandelion seed to display it on the map below.
-                Please write coordinates as numbers only (no need to write ° or W)</p>
+                    Please write coordinates as numbers only (no need to write ° or W)</p>
 
                 <label htmlFor="time">Time</label>
                 <input
@@ -272,8 +272,7 @@ export default class Form extends Component { // Form: class component
                     type="file"
                     id="fileB"
                     capture="environment" //enable mobile external camera instead of file selection
-                    onChange={this.handleImgChange}
-                />
+                    onChange={this.handleImgChange}/>
 
                 <input
                     type="button"

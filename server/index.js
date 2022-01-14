@@ -9,13 +9,12 @@ const doc = new GoogleSpreadsheet('1laEZJYS1Tf8mr6k5gDk3rKlZhngPqJv79EbZdzYxkvo'
 
 async function accessSpreadsheet(col, lat, lon, time, date, autoloc, temp, hum, imgurl){
 	await doc.useServiceAccountAuth(creds); //initialise auth
-	await doc.loadInfo(); //loads entire doc and worksheets
-	const sheet = doc.sheetsByIndex[0]; //initialise first worksheet to const sheet
+	await doc.loadInfo(); 					//loads entire doc and worksheets
+	const sheet = doc.sheetsByIndex[0]; 	//initialise first worksheet to const sheet
 
 	console.log('Title: ', doc.title, ' Rows: ', sheet.rowCount);
 
-	//add row with values 
-	await sheet.addRow({
+	await sheet.addRow({ //add row with values
 		Colour: col,
 		Latitude: lat,
 		Longitude: lon,
@@ -27,7 +26,7 @@ async function accessSpreadsheet(col, lat, lon, time, date, autoloc, temp, hum, 
 		Image: '=IMAGE("' + imgurl + '", 1)'
 		},
 		{insert: true,
-		}); //prevents entries overwriting each other, in theory
+		}); //prevents entries overwriting each other
 		//from https://github.com/theoephraim/node-google-spreadsheet/issues/316
 }
 
@@ -61,9 +60,18 @@ app.post("/submit", (req, res) => {
 	}
 	
 	// Handle your request as if no errors happened
-
 	(async function () {
-		await accessSpreadsheet(req.body.inst.col, req.body.inst.lat, req.body.inst.lon, req.body.inst.time, req.body.inst.date, req.body.inst.autoloc,req.body.inst.temp,req.body.inst.hum, req.body.inst.imgurl)
+		await accessSpreadsheet(
+			req.body.inst.col,
+			req.body.inst.lat,
+			req.body.inst.lon,
+			req.body.inst.time,
+			req.body.inst.date,
+			req.body.inst.autoloc,
+			req.body.inst.temp,
+			req.body.inst.hum,
+			req.body.inst.imgurl
+		)
 		.then(res.send("SUCCESS"))
 		.catch(err=>{
 		res.send(err);});
@@ -74,13 +82,12 @@ app.post("/submit", (req, res) => {
 
 // Handles GET request for seed coordinates
 app.get('/seeds', (req, res) =>{
-
 	let coords = [];
 
 	(async function () {
 		await doc.useServiceAccountAuth(creds); //initialise auth
-		await doc.loadInfo(); //loads entire doc and worksheets
-		const sheet = doc.sheetsByIndex[0]; //initilise first worksheet to const sheet
+		await doc.loadInfo(); 					//loads entire doc and worksheets
+		const sheet = doc.sheetsByIndex[0]; 	//initialise first worksheet to const sheet
 
 		const rows = await sheet.getRows();
 		rows.forEach(row => {
@@ -92,7 +99,6 @@ app.get('/seeds', (req, res) =>{
 	})();
 
 })
-
 
 app.get("/key",(req,res)=>{
 	res.json(weatherKey);
@@ -107,4 +113,3 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server listening on http://localhost:${PORT}`);
 })
-
