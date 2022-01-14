@@ -31,6 +31,7 @@ export default class Form extends Component { // Form: class component
         pic.append("file", image)
         pic.append("upload_preset", "dandelion")
         pic.append("cloud_name","zjordseeds")
+
         fetch("  https://api.cloudinary.com/v1_1/zjordseeds/image/upload",{
             method:"post",
             body: pic
@@ -84,10 +85,18 @@ export default class Form extends Component { // Form: class component
 
     //validates entry and sends data to google sheets database with temp&humid data
     submitForm = async (e) => {
-        if ( (this.state.lat && this.state.lon && this.state.img) === '' ){ //this.state.time && this.state.col
+        if ( (this.state.lat && this.state.lon && this.state.img) === '' ){
             Swal.fire({
                 title: "Warning",
                 text: "You missed out vital info!",
+                confirmButtonText: "Let me double check",
+                icon: "warning",
+            }).then(/*empty promise*/)
+        }
+        else if(this.state.col.length > 10){// Input validation: checks length and makes sure colour string is purely alphabetical
+            Swal.fire({
+                title: "Warning",
+                text: "That wasn't a valid colour!",
                 confirmButtonText: "Let me double check",
                 icon: "warning",
             }).then(/*empty promise*/)
@@ -97,8 +106,11 @@ export default class Form extends Component { // Form: class component
             this.props.handleSubmit(this.state);
             let inst = [];
             const API_key = '39f0b3d543c797a3eeecd77ddd38cf51';
-            const url = `https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${this.state.lat}&lon=${this.state.lon}&appid=${API_key}`;//note units=metric
+            const unixTime = parseInt((new Date('2022.01.13').getTime() / 1000).toFixed(0))
+            const url = `https://api.openweathermap.org/data/2.5/onecall/timemachine?units=metric&lat=${this.state.lat}&lon=${this.state.lon}&dt=${unixTime}&appid=${API_key}`
+            //const url = `https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${this.state.lat}&lon=${this.state.lon}&appid=${API_key}`;//note units=metric
             console.log(url);
+
 
             //get weather api: temperature and humidity
             await axios.get(url).then(res => {
@@ -119,7 +131,6 @@ export default class Form extends Component { // Form: class component
                         imgurl: this.state.imgurl
                     }
                 }).catch(err => console.log(err));
-
 
             console.log(inst);//test1
 
@@ -154,7 +165,7 @@ export default class Form extends Component { // Form: class component
         const {col, lat, lon,time} = this.state;
 
         return (
-            <form action="/submit" onSubmit={this.submitForm}>
+            <form>
                 <label htmlFor="col">Colour</label>
                 <input
                     type="text"
@@ -200,7 +211,8 @@ export default class Form extends Component { // Form: class component
                     type="file"
                     id="fileB"
                     capture="environment" //enable mobile external camera instead of file selection
-                    onChange={this.handleImgChange}/>
+                    onClick={this.handleImgChange}
+                />
 
                 <input
                     type="button"

@@ -1,7 +1,6 @@
 // based on tutorial from https://www.taniarascia.com/getting-started-with-react/
 // TODO investigate dependence on "public" folder (eg, index.html)
 import React, {Component} from 'react'
-import Table from './Table'
 import Form from "./Form";
 import logo from "./static/assets/jemilicious_logo.png"
 import dandelion from './static/Icon/dandelion_icon_colored.png'
@@ -20,8 +19,12 @@ export default class App extends Component {
     }
 
      componentDidMount() { //Use AddMarkers to grab coordinates from google sheets, set marker state to array of coords
-         AddMarkers().then(r=>this.setState({marker: r}))
+         AddMarkers().then(r => {
+             this.setState({marker: r});
+             console.log(r)
+         })
      }
+
 
     remove_dData = index => {
         const {dData} = this.state.dData
@@ -61,9 +64,6 @@ export default class App extends Component {
                         ‣submit the photo along with the location and time of where and when you found the seed</p>
                 <div className={'horizontal'} style={{"margin-top":'1em',"margin-bottom":'1em'}}/>
                 <div style={{"max-width":'600px'}}>
-                    <Table
-                    dData={dData}
-                    remove_dData={this.remove_dData} />
                     <h3>Add new entry!</h3>
                     <Form
                         handleSubmit={this.handleSubmit} /></div>
@@ -90,6 +90,12 @@ export default class App extends Component {
                              })}
                         /> )}
                 </MapContainer>
+                <div className={'horizontal'} style={{"margin-top":'1em',"margin-bottom":'1em'}}/>
+                <footer>
+                    <p>
+                        Imperial College London Bioengineering Department: A Year 3 Undergraduate Project
+                    </p>
+                </footer>
             </div>
         )
     }

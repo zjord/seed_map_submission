@@ -97,19 +97,17 @@ app.get('/seeds', (req, res) =>{
 		await doc.loadInfo(); //loads entire doc and worksheets
 		const sheet = doc.sheetsByIndex[0]; //initilise first worksheet to const sheet
 
-
 		const rows = await sheet.getRows();
 		rows.forEach(row => {
 			coords.push([row.Latitude, row.Longitude])
 		})
-
 		res.send(coords);
 	})();
 
 })
 
 // All other GET requests not handled before will return our React app
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
   	res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 });
 
