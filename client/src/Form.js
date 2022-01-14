@@ -25,21 +25,6 @@ export default class Form extends Component { // Form: class component
         this.setState({[name]: value})
     }
 
-    // handleColChange = e => {
-    //     const {colour, value} = e.target
-    //     if(colour.length > 12 && (!/^[a-zA-Z]+$/.test(colour))){// Input validation: checks length and makes sure colour string is purely alphabetical
-    //         Swal.fire({
-    //             title: "Warning",
-    //             text: "That wasn't a valid colour!",
-    //             confirmButtonText: "Let me double check",
-    //             icon: "warning",
-    //         }).then(/*empty promise*/)
-    //     }
-    //     else {
-    //         this.setState({col: value})
-    //     }
-    // }
-
     //uploads image to cloudinary
     handleImgChange = e => {
         const image = e.target.files[0]
@@ -104,14 +89,22 @@ export default class Form extends Component { // Form: class component
                 icon: "warning",
             }).then(/*empty promise*/)
         }
-        // else if(this.state.col.length > 12 && (!/^[a-zA-Z]+$/.test(this.state.col))){// Input validation: checks length and makes sure colour string is purely alphabetical
-        //     Swal.fire({
-        //         title: "Warning",
-        //         text: "That wasn't a valid colour!",
-        //         confirmButtonText: "Let me double check",
-        //         icon: "warning",
-        //     }).then(/*empty promise*/)
-        // }
+        else if(this.state.col.length > 16 || (!/^[a-zA-Z]+$/.test(this.state.col))){// Input validation: checks length and makes sure colour string is purely alphabetical
+            Swal.fire({
+                title: "Warning",
+                text: "That wasn't a valid colour!",
+                confirmButtonText: "Let me double check",
+                icon: "warning",
+            }).then(/*empty promise*/)
+        }
+        else if((/^[a-zA-Z]+$/.test(this.state.lat)) || (/^[a-zA-Z]+$/.test(this.state.lon))){
+            Swal.fire({
+                title: "Warning",
+                text: "We can't accept these coordinates!",
+                confirmButtonText: "Let me double check",
+                icon: "warning",
+            }).then(/*empty promise*/)
+        }
         else {
             e.preventDefault();
 
@@ -142,9 +135,9 @@ export default class Form extends Component { // Form: class component
                 this.props.handleSubmit(this.state);
                 const API_key = '39f0b3d543c797a3eeecd77ddd38cf51';
                 const unixTime = parseInt((new Date('2022.01.13').getTime() / 1000).toFixed(0))
-                const url = `https://api.openweathermap.org/data/2.5/onecall/timemachine?units=metric&lat=${this.state.lat}&lon=${this.state.lon}&dt=${unixTime}&appid=${API_key}`
-                //const url = `https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${this.state.lat}&lon=${this.state.lon}&appid=${API_key}`;//note units=metric
-                console.log(url);
+                //const url = `https://api.openweathermap.org/data/2.5/onecall/timemachine?units=metric&lat=${this.state.lat}&lon=${this.state.lon}&dt=${unixTime}&appid=${API_key}`
+                const url = `https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${this.state.lat}&lon=${this.state.lon}&appid=${API_key}`;//note units=metric
+                console.log(url)
                 console.log("State right before submission")
                 console.log(this.state)
 
@@ -172,28 +165,38 @@ export default class Form extends Component { // Form: class component
 
                 console.log(inst);//test1
 
-                //POST request to server endpoint /submit
-                await axios.post('/submit', {inst}).then((res) => {
-                    console.log(res);
-                    console.log(res.data);
+                if ( (this.state.temp && this.state.hum) === '' ){
+                    Swal.fire({
+                        title: "Warning",
+                        text: "We couldn't read these coordinates!",
+                        confirmButtonText: "Let me double check",
+                        icon: "warning",
+                    }).then(/*empty promise*/)
+                }
+                else{
+                    //POST request to server endpoint /submit
+                    await axios.post('/submit', {inst}).then((res) => {
+                        console.log(res);
+                        console.log(res.data);
 
-                    if (res.data === "SUCCESS") {
-                        Swal.fire({
-                            title: "Entry submitted",
-                            html: "Thank you for your submission! <br> You can find your own pin in the map below <br> (Reload the website to see changes)",
-                            icon: "success",
-                        }).then(/*empty promise*/)
-                    } else {
-                        Swal.fire({
-                            title: "Server connection went wrong",
-                            html: "Try again later",
-                            icon: "warning",
-                        }).then()
-                    }
-                });
+                        if (res.data === "SUCCESS") {
+                            Swal.fire({
+                                title: "Entry submitted",
+                                html: "Thank you for your submission! <br> You can find your own pin in the map below <br> (Reload the website to see changes)",
+                                icon: "success",
+                            }).then(/*empty promise*/)
+                        } else {
+                            Swal.fire({
+                                title: "Server connection went wrong",
+                                html: "Try again later",
+                                icon: "warning",
+                            }).then()
+                        }
+                    });
+                    console.log("State right after axios.post")
+                    console.log(this.state)
+                }
 
-                console.log("State right after axios.post")
-                console.log(this.state)
             }
         }
         this.setState(this.initialState) // clears form
@@ -212,6 +215,7 @@ export default class Form extends Component { // Form: class component
                     name="col"
                     id="col"
                     value={col}
+                    placeholder={"e.g. red"}
                     onChange={this.handleDataChange}/>
 
                 <label htmlFor="lat">Latitude</label>
@@ -220,6 +224,7 @@ export default class Form extends Component { // Form: class component
                     name="lat"
                     id="lat"
                     value={lat}
+                    placeholder={"e.g. 51.498342"}
                     onChange={this.handleDataChange}/>
 
                 <label htmlFor="lon">Longitude</label>
@@ -228,12 +233,18 @@ export default class Form extends Component { // Form: class component
                     name="lon"
                     id="lon"
                     value={lon}
+                    placeholder={"e.g. -0.177002"}
                     onChange={this.handleDataChange}/>
+
                 <input
                     type="button"
                     name="locB"
                     value="Use my location!"
                     onClick={this.grabLocation}/>
+
+                <p style={{'border':'2px', 'border-style':'solid', 'border-color':'black','padding': '0.5em', 'margin':'1em'}}>
+                    DISCLAIMER: this location data is only used to track where you found the dandelion seed to display it on the map below.
+                Please write coordinates as numbers only (no need to write ° or W)</p>
 
                 <label htmlFor="time">Time</label>
                 <input
