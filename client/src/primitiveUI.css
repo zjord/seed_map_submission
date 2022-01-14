@@ -132,9 +132,7 @@ samp {
 /**
  * Add the correct font size in all browsers.
  */
-small {
-  font-size: 80%;
-}
+
 
 /**
  * Prevent `sub` and `sup` elements from affecting the line height in
@@ -1049,7 +1047,7 @@ caption {
   position: center;
 }
 
-h1.small {
+.small {
   font-variant: small-caps;
 }
 

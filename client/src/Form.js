@@ -212,6 +212,7 @@ export default class Form extends Component { // Form: class component
                     name="col"
                     id="col"
                     value={col}
+                    placeholder={"e.g. red"}
                     onChange={this.handleDataChange}/>
 
                 <label htmlFor="lat">Latitude</label>
@@ -220,6 +221,7 @@ export default class Form extends Component { // Form: class component
                     name="lat"
                     id="lat"
                     value={lat}
+                    placeholder={"e.g. 51.498342"}
                     onChange={this.handleDataChange}/>
 
                 <label htmlFor="lon">Longitude</label>
@@ -228,12 +230,18 @@ export default class Form extends Component { // Form: class component
                     name="lon"
                     id="lon"
                     value={lon}
+                    placeholder={"e.g. -0.177002"}
                     onChange={this.handleDataChange}/>
+
                 <input
                     type="button"
                     name="locB"
                     value="Use my location!"
                     onClick={this.grabLocation}/>
+
+                <p style={{'border':'2px', 'border-style':'solid', 'border-color':'black','padding': '0.5em', 'margin':'1em'}}>
+                    DISCLAIMER: this location data is only used to track where you found the dandelion seed to display it on the map below.
+                Please write coordinates as numbers only (no need to write ° or W)</p>
 
                 <label htmlFor="time">Time</label>
                 <input

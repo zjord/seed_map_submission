@@ -52,11 +52,11 @@ export default class App extends Component {
                         ‣submit the photo along with the location and time of where and when you found the seed</p>
                 <div className={'horizontal'} style={{"margin-top":'1em',"margin-bottom":'1em'}}/>
                 <div style={{"max-width":'600px'}}>
-                    <h3>Add new entry!</h3>
+                    <h3 className={'small'}>add new entry!</h3>
                     <Form
                         handleSubmit={this.handleSubmit} /></div>
-                <div className={'horizontal'} style={{"margin-top":'1em',"margin-bottom":'1em'}}/>
-                <p style={{textAlign: "center"}}> Here are all the found dandelion seeds so far! </p>
+                <div className={'horizontal'} style={{"margin-top":'1em',"margin-bottom":'0.5em'}}/>
+                <h3 className={'small'} style={{textAlign: "center"}}> here are all the found dandelion seeds so far! </h3>
                 <MapContainer
                     className="map"
                     center={[51.5072, -0.118092]}
