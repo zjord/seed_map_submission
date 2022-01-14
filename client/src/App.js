@@ -9,9 +9,6 @@ import {MapContainer, Marker, TileLayer} from 'react-leaflet';
 import "leaflet/dist/leaflet.css";
 import {Icon} from "leaflet/dist/leaflet-src.esm";
 
-
-
-
 export default class App extends Component {
     state = {
         dData: [], //dandelionData
@@ -26,21 +23,12 @@ export default class App extends Component {
      }
 
 
-    remove_dData = index => {
-        const {dData} = this.state.dData
-        this.setState({
-            dData: dData.filter((cdData, i) => {
-                return i !== index;
-            })
-        });
-    }
     handleSubmit = (cdData) => { //current dandelionData
         this.setState({
             dData: [...this.state.dData, cdData],
           })
     }
     render() {
-        const {dData} = this.state
         return (
             <div className="container" style={{"padding-top": '2em'}}>
                     {/*logo, title and imperial college london 2021/2022*/}
@@ -85,8 +73,8 @@ export default class App extends Component {
                         icon = { new Icon({
                             iconUrl: dandelion,
                             iconRetinaUrl: dandelion,
-                            iconSize: [65,65]
-                            //TODO change icon anchor
+                            iconSize: [65,65],
+                            iconAnchor: [10,65] //makes dandelion shoot the tip of the pin
                              })}
                         /> )}
                 </MapContainer>

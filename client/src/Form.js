@@ -13,7 +13,8 @@ export default class Form extends Component { // Form: class component
         img: '',
         imgurl: '',
         time: '',
-        autoloc: '',
+        date: '',
+        autoloc: 'Manual',
         temp: '',
         hum: ''
     }
@@ -27,26 +28,7 @@ export default class Form extends Component { // Form: class component
     //uploads image to cloudinary
     handleImgChange = e => {
         const image = e.target.files[0]
-        const pic = new FormData()
-        pic.append("file", image)
-        pic.append("upload_preset", "dandelion")
-        pic.append("cloud_name","zjordseeds")
-
-        fetch("  https://api.cloudinary.com/v1_1/zjordseeds/image/upload",{
-            method:"post",
-            body: pic
-        })
-            .then(resp => resp.json())
-            .then(pic => {
-                this.setState({imgurl: pic.url})
-            })
-            .catch(err => console.log(err))
         this.setState({img: image}) //avoids invalid submission
-    }
-
-    //TODO fix popup disappearing when pressing enter
-    handleKeypress = e => {
-        if (e.keyCode === 13){ this.submitForm() }
     }
 
     grabLocation = () => {
@@ -85,7 +67,8 @@ export default class Form extends Component { // Form: class component
 
     //validates entry and sends data to google sheets database with temp&humid data
     submitForm = async (e) => {
-        if ( (this.state.lat && this.state.lon && this.state.img) === '' ){
+        
+        if ( (this.state.lat && this.state.lon && this.state.img && this.state.time && this.state.col && this.state.date) === '' ){
             Swal.fire({
                 title: "Warning",
                 text: "You missed out vital info!",
@@ -102,14 +85,40 @@ export default class Form extends Component { // Form: class component
             }).then(/*empty promise*/)
         }
         else {
-			e.preventDefault();
-            this.props.handleSubmit(this.state);
+            e.preventDefault();
+
+            // uploads image to cloudinary for hosting to google sheets
+            const pic = new FormData()
+            pic.append("file", this.state.img)
+            pic.append("upload_preset", "dandelion")
+            pic.append("cloud_name","zjordseeds")
+            await fetch("https://api.cloudinary.com/v1_1/zjordseeds/image/upload",{
+                method:"post",
+                body: pic
+            })
+                .then(resp => resp.json())
+                .then(pic => {
+                    this.setState({imgurl: pic.url})
+                })
+                .catch(err => console.log(err))
+
+            if (this.state.imgurl === '' ){
+                Swal.fire({
+                    title: "Unable to upload image",
+                    html: "Try again",
+                    icon: "warning",
+                }).then(/*empty promise*/)
+            }
+
             let inst = [];
+            this.props.handleSubmit(this.state);
             const API_key = '39f0b3d543c797a3eeecd77ddd38cf51';
             const unixTime = parseInt((new Date('2022.01.13').getTime() / 1000).toFixed(0))
             const url = `https://api.openweathermap.org/data/2.5/onecall/timemachine?units=metric&lat=${this.state.lat}&lon=${this.state.lon}&dt=${unixTime}&appid=${API_key}`
             //const url = `https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${this.state.lat}&lon=${this.state.lon}&appid=${API_key}`;//note units=metric
             console.log(url);
+            console.log("State right before submission")
+            console.log(this.state)
 
 
             //get weather api: temperature and humidity
@@ -120,11 +129,12 @@ export default class Form extends Component { // Form: class component
                         hum: res.data.main.humidity,
                     });
                     //cloned instance of submission object (axios doesn't accept state object)
-                     inst = {
+                    inst = {
                         col: this.state.col,
                         lat: this.state.lat,
                         lon: this.state.lon,
                         time: this.state.time,
+                        date: this.state.date,
                         autoloc: this.state.autoloc,
                         temp: this.state.temp,
                         hum: this.state.hum,
@@ -134,35 +144,37 @@ export default class Form extends Component { // Form: class component
 
             console.log(inst);//test1
 
-			//POST request to server endpoint /submit
-			await axios.post('/submit', {inst} ).then( (res) => {
-				console.log(res);
-				console.log(res.data);
+                //POST request to server endpoint /submit
+                await axios.post('/submit', {inst}).then((res) => {
+                    console.log(res);
+                    console.log(res.data);
 
-				if(res.data === "SUCCESS"){
-                    Swal.fire({
-                        title: "Entry submitted",
-                        html: "Thank you for your submission! <br> You can find your own pin in the map below <br> (Reload the website to see changes)",
-                        icon: "success",
-                    }).then(/*empty promise*/)
-				}
-				else{
-					Swal.fire({
-                        title:"Server connection went wrong",
-                        html: "Try again later",
-                        icon: "warning",
-                    }).then()
-				}
+                    if (res.data === "SUCCESS") {
+                        Swal.fire({
+                            title: "Entry submitted",
+                            html: "Thank you for your submission! <br> You can find your own pin in the map below <br> (Reload the website to see changes)",
+                            icon: "success",
+                        }).then(/*empty promise*/)
+                    } else {
+                        Swal.fire({
+                            title: "Server connection went wrong",
+                            html: "Try again later",
+                            icon: "warning",
+                        }).then()
+                    }
+                });
 
-			});
-			
+                console.log("State right after axios.post")
+                console.log(this.state)
+            
         }
         this.setState(this.initialState) // clears form
         document.getElementById('fileB').value= null; // resets fileButton text to "No file chosen"
     }
 
     render() {
-        const {col, lat, lon,time} = this.state;
+        const {col, lat, lon,time,date} = this.state;
+
 
         return (
             <form>
@@ -172,24 +184,23 @@ export default class Form extends Component { // Form: class component
                     name="col"
                     id="col"
                     value={col}
-                    onChange={this.handleDataChange}
-                    onKeyDown={this.handleKeypress}/>
+                    onChange={this.handleDataChange}/>
+
                 <label htmlFor="lat">Latitude</label>
                 <input
                     type="text"
                     name="lat"
                     id="lat"
                     value={lat}
-                    onChange={this.handleDataChange}
-                    onKeyDown={this.handleKeypress}/>
+                    onChange={this.handleDataChange}/>
+
                 <label htmlFor="lon">Longitude</label>
                 <input
                     type="text"
                     name="lon"
                     id="lon"
                     value={lon}
-                    onChange={this.handleDataChange}
-                    onKeyDown={this.handleKeypress}/>
+                    onChange={this.handleDataChange}/>
                 <input
                     type="button"
                     name="locB"
@@ -202,8 +213,15 @@ export default class Form extends Component { // Form: class component
                     name="time"
                     id="time"
                     value={time}
-                    onChange={this.handleDataChange}
-                    onKeyDown={this.handleKeypress}/>
+                    onChange={this.handleDataChange}/>
+
+                <label htmlFor="date">Date</label>
+                <input
+                    type="date"
+                    name="date"
+                    id="date"
+                    value={date}
+                    onChange={this.handleDataChange}/>
 
                 <label htmlFor="img">Image</label>
                 <input
@@ -211,7 +229,7 @@ export default class Form extends Component { // Form: class component
                     type="file"
                     id="fileB"
                     capture="environment" //enable mobile external camera instead of file selection
-                    onClick={this.handleImgChange}
+                    onChange={this.handleImgChange}
                 />
 
                 <input
