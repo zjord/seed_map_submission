@@ -133,13 +133,17 @@ export default class Form extends Component { // Form: class component
             else {
                 let inst = [];
                 this.props.handleSubmit(this.state);
-                const API_key = '39f0b3d543c797a3eeecd77ddd38cf51';
-                const unixTime = parseInt((new Date('2022.01.13').getTime() / 1000).toFixed(0))
+                let API_key = '';
+
+                await axios.get("/key").then(res=>{// GET request for weather api key
+                    API_key =  res.data.key;
+                }).catch(err=>{console.log(err)})
+
+                console.log("State right before submission")//test1
+
+                //const unixTime = parseInt((new Date('2022.01.13').getTime() / 1000).toFixed(0))
                 //const url = `https://api.openweathermap.org/data/2.5/onecall/timemachine?units=metric&lat=${this.state.lat}&lon=${this.state.lon}&dt=${unixTime}&appid=${API_key}`
                 const url = `https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${this.state.lat}&lon=${this.state.lon}&appid=${API_key}`;//note units=metric
-                console.log(url)
-                console.log("State right before submission")
-                console.log(this.state)
 
 
                 //get weather api: temperature and humidity
@@ -174,12 +178,12 @@ export default class Form extends Component { // Form: class component
                     }).then(/*empty promise*/)
                 }
                 else{
-                    //POST request to server endpoint /submit
+                    //POST request to server's /submit endpoint
                     await axios.post('/submit', {inst}).then((res) => {
                         console.log(res);
                         console.log(res.data);
 
-                        if (res.data === "SUCCESS") {
+                        if (res.data === "SUCCESS") {//Success validator
                             Swal.fire({
                                 title: "Entry submitted",
                                 html: "Thank you for your submission! <br> You can find your own pin in the map below <br> (Reload the website to see changes)",

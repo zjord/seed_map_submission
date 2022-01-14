@@ -4,6 +4,7 @@ const {validationResult} = require('express-validator');
 const app = express();
 const {GoogleSpreadsheet} = require('google-spreadsheet');
 const creds = require('./client_secret.json');
+const weatherKey = require('./weather_key.json');
 const doc = new GoogleSpreadsheet('1laEZJYS1Tf8mr6k5gDk3rKlZhngPqJv79EbZdzYxkvo'); //initialise the entire googlespreadsheet document
 
 async function accessSpreadsheet(col, lat, lon, time, date, autoloc, temp, hum, imgurl){
@@ -83,13 +84,19 @@ app.get('/seeds', (req, res) =>{
 
 		const rows = await sheet.getRows();
 		rows.forEach(row => {
-			coords.push([row.Latitude, row.Longitude])
+			if(row.Latitude || row.Longitude != null) {
+				coords.push([row.Latitude, row.Longitude])
+			}
 		})
 		res.send(coords);
 	})();
 
 })
 
+
+app.get("/key",(req,res)=>{
+	res.json(weatherKey);
+})
 // All other GET requests not handled before will return our React app
 app.get('*', (req, res) => {
   	res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
