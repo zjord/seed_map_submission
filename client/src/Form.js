@@ -97,7 +97,7 @@ export default class Form extends Component { // Form: class component
         const image = e.target.files[0]
         // console.log('Image size: ')
         // console.log(image.size)
-        if (image.size >= 15000000) {
+        if (image.size >= 10000000) {
             Swal.fire({
                 title: "Warning",
                 text: "File size is too large!(Must be smaller than 15MB)",
