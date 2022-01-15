@@ -5,7 +5,75 @@ import React, {Component} from "react";
 import axios from 'axios';
 import Swal from "sweetalert2";
 
+function colourValid (colour) {// checks length and ensures colour string is purely alphabetical
+    let valid = true
+    if(colour.length > 16 || (!/^[a-zA-Z]+$/.test(colour))){
+        Swal.fire({
+            title: "Warning",
+            text: "That wasn't a valid colour!",
+            confirmButtonText: "Let me double check",
+            icon: "warning",
+        }).then(/*empty promise*/)
+        valid = false
+    }
+    return valid
+}
+function coordsValid(lat, lon){//validates location is purely numerical
+    let valid = true;
+    if((/^[a-zA-Z]+$/.test(lat)) || (/^[a-zA-Z]+$/.test(lon))){
+        Swal.fire({
+            title: "Warning",
+            text: "We can't accept these coordinates!",
+            confirmButtonText: "Let me double check",
+            icon: "warning",
+        }).then(/*empty promise*/)
+        valid = false
+    }
+    return valid;
+}
+function submissionValid(response){//validates submission success
+    let valid = true
+    if (response === "SUCCESS") {
+        Swal.fire({
+            title: "Entry submitted",
+            html: "Thank you for your submission! <br>" +
+                " You can find your own pin in the map below " +
+                "<br> (Reload the website to see changes)",
+            icon: "success",
+        }).then(/*empty promise*/)
+    } else {
+        Swal.fire({
+            title: "Server connection went wrong",
+            html: "Try again later",
+            icon: "warning",
+        }).then()
+        valid = false
+    }
+    return valid;
+}
+function loading(){//Loading screen
+    Swal.fire({
+        didOpen: () => { Swal.showLoading()},
+        title: "Loading...",
+        footer: "If you are submitting from a mobile device, it might take a bit to submit - please be patient"
+    }).then(/*empty promise*/)
+}
+function missingval(lat, lon, img, time, col, date){
+    let missing = false
+    if((lat || lon || img || time || col || date) === ''){
+        Swal.fire({
+            title: "Warning",
+            text: "You missed out vital info!",
+            confirmButtonText: "Let me double check",
+            icon: "warning",
+        }).then(/*empty promise*/)
+        missing = true;
+    }
+   return missing;
+}
+
 export default class Form extends Component { // Form: class component
+
     initialState = {
         col: '',
         lat: '',
@@ -76,135 +144,98 @@ export default class Form extends Component { // Form: class component
     }
 
     submitForm = async (e) => { //validates entry and sends data to google sheets database with temp&humid data
-        
-        if ( (this.state.lat && this.state.lon && this.state.img && this.state.time && this.state.col && this.state.date) === '' ){
-            Swal.fire({
-                title: "Warning",
-                text: "You missed out vital info!",
-                confirmButtonText: "Let me double check",
-                icon: "warning",
-            }).then(/*empty promise*/)
-        }
-        // Input validation: checks length and makes sure colour string is purely alphabetical
-        else if(this.state.col.length > 16 || (!/^[a-zA-Z]+$/.test(this.state.col))){
-            Swal.fire({
-                title: "Warning",
-                text: "That wasn't a valid colour!",
-                confirmButtonText: "Let me double check",
-                icon: "warning",
-            }).then(/*empty promise*/)
-        }
-        else if((/^[a-zA-Z]+$/.test(this.state.lat)) || (/^[a-zA-Z]+$/.test(this.state.lon))){
-            Swal.fire({
-                title: "Warning",
-                text: "We can't accept these coordinates!",
-                confirmButtonText: "Let me double check",
-                icon: "warning",
-            }).then(/*empty promise*/)
-        }
-        else {
+        if(!missingval(this.state.lat, this.state.lon, this.state.img,this.state.time, this.state.col,this.state.date)) {
+            if (colourValid(this.state.col)) {
+                if (coordsValid(this.state.lat, this.state.lon)) {
+                    e.preventDefault();
+                    loading()
 
-            Swal.fire({
-                didOpen: () => { Swal.showLoading()},
-                title: "Loading...",
-                footer: "If you are submitting from a mobile device, it might take a bit to submit - please be patient"
-            }).then(/*empty promise*/)
+                    //-IMAGE HANDLING---------------------------------------------------------//
+                    //-uploads image to cloudinary for hosting to google sheets---------------//
+                    const pic = new FormData()
+                    pic.append("file", this.state.img)
+                    pic.append("upload_preset", "dandelion")
+                    pic.append("cloud_name", "zjordseeds")
+                    await fetch("https://api.cloudinary.com/v1_1/zjordseeds/image/upload", {
+                        method: "post",
+                        body: pic
+                    })
+                        .then(resp => resp.json())
+                        .then(pic => {
+                            this.setState({imgurl: pic.url})
+                        })
+                        .catch(err => console.log(err))
+                    //-----------------------------------------------------------------------//
 
-            e.preventDefault ();
+                    if (this.state.imgurl === '') {
+                        Swal.fire({
+                            title: "Unable to upload image",
+                            html: "Try again",
+                            icon: "warning",
+                        }).then(/*empty promise*/)
+                    } else {
+                        let inst = [];
+                        this.props.handleSubmit(this.state);
 
-            // uploads image to cloudinary for hosting to google sheets
-            const pic = new FormData()
-            pic.append("file", this.state.img)
-            pic.append("upload_preset", "dandelion")
-            pic.append("cloud_name","zjordseeds")
-            await fetch("https://api.cloudinary.com/v1_1/zjordseeds/image/upload",{
-                method:"post",
-                body: pic
-            })
-                .then(resp => resp.json())
-                .then(pic => {
-                    this.setState({imgurl: pic.url})
-                })
-                .catch(err => console.log(err))
+                        //-----------------HANDLE WEATHER--------------------------------------//
+                        let API_key = '';
+                        await axios.get("/key").then(res => { // GET request for weather api key
+                            API_key = res.data.key;
+                        }).catch(err => {
+                            console.log(err)
+                        })
 
-            if (this.state.imgurl === '' ){
-                Swal.fire({
-                    title: "Unable to upload image",
-                    html: "Try again",
-                    icon: "warning",
-                }).then(/*empty promise*/)
-            }
-            else {
-                let inst = [];
-                this.props.handleSubmit(this.state);
-                let API_key = '';
+                        // console.log("State right before submission")//test1
 
-                await axios.get("/key").then(res=>{ // GET request for weather api key
-                    API_key =  res.data.key;
-                }).catch(err=>{console.log(err)})
+                        //const unixTime = parseInt((new Date('2022.01.13').getTime() / 1000).toFixed(0))
+                        //const url = `https://api.openweathermap.org/data/2.5/onecall/timemachine?units=metric&lat=${this.state.lat}&lon=${this.state.lon}&dt=${unixTime}&appid=${API_key}`
+                        const url = `https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${this.state.lat}&lon=${this.state.lon}&appid=${API_key}`;//note units=metric
 
-                // console.log("State right before submission")//test1
+                        await axios.get(url).then(res => { //get weather api: temperature and humidity
+                            // console.log(res.data);
+                            this.setState({
+                                temp: res.data.main.temp,
+                                hum: res.data.main.humidity,
+                            });
+                            inst = { //cloned instance of submission object (axios doesn't accept state object)
+                                col: this.state.col,
+                                lat: this.state.lat,
+                                lon: this.state.lon,
+                                time: this.state.time,
+                                date: this.state.date,
+                                autoloc: this.state.autoloc,
+                                temp: this.state.temp,
+                                hum: this.state.hum,
+                                imgurl: this.state.imgurl
+                            }
+                        }).catch(err => console.log(err));
+                        // console.log(inst);//test1
 
-                //const unixTime = parseInt((new Date('2022.01.13').getTime() / 1000).toFixed(0))
-                //const url = `https://api.openweathermap.org/data/2.5/onecall/timemachine?units=metric&lat=${this.state.lat}&lon=${this.state.lon}&dt=${unixTime}&appid=${API_key}`
-                const url = `https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${this.state.lat}&lon=${this.state.lon}&appid=${API_key}`;//note units=metric
-
-                await axios.get(url).then(res => { //get weather api: temperature and humidity
-                    // console.log(res.data);
-                    this.setState({
-                        temp: res.data.main.temp,
-                        hum: res.data.main.humidity,
-                    });
-                    inst = { //cloned instance of submission object (axios doesn't accept state object)
-                        col: this.state.col,
-                        lat: this.state.lat,
-                        lon: this.state.lon,
-                        time: this.state.time,
-                        date: this.state.date,
-                        autoloc: this.state.autoloc,
-                        temp: this.state.temp,
-                        hum: this.state.hum,
-                        imgurl: this.state.imgurl
-                    }
-                }).catch(err => console.log(err));
-                // console.log(inst);//test1
-
-                if ( (this.state.temp && this.state.hum) === '' ){
-                    Swal.fire({
-                        title: "Warning",
-                        text: "We couldn't read these coordinates!",
-                        confirmButtonText: "Let me double check",
-                        icon: "warning",
-                    }).then(/*empty promise*/)
-                }
-                else{
-                    //POST request to server's /submit endpoint
-                    await axios.post('/submit', {inst}).then((res) => {
-                        // console.log(res);
-                        // console.log(res.data);
-
-                        if (res.data === "SUCCESS") { //Success validator
+                        if ((this.state.temp && this.state.hum) === '') {
                             Swal.fire({
-                                title: "Entry submitted",
-                                html: "Thank you for your submission! <br>" +
-                                    " You can find your own pin in the map below " +
-                                    "<br> (Reload the website to see changes)",
-                                icon: "success",
+                                title: "Warning",
+                                text: "We couldn't read these coordinates!",
+                                confirmButtonText: "Let me double check",
+                                icon: "warning",
                             }).then(/*empty promise*/)
                         } else {
-                            Swal.fire({
-                                title: "Server connection went wrong",
-                                html: "Try again later",
-                                icon: "warning",
-                            }).then()
+                            //POST request to server's /submit endpoint
+                            await axios.post('/submit', {inst}).then((res) => {
+                                // console.log(res);
+                                // console.log(res.data);
+                                submissionValid(res.data)
+                            });
+                            // console.log("State right after axios.post")
+                            // console.log(this.state)
                         }
-                    });
-                    // console.log("State right after axios.post")
-                    // console.log(this.state)
-                }
 
+                    }
+
+                }
             }
+
         }
+
         this.setState(this.initialState) // clears form
         document.getElementById('fileB').value= null; // resets fileButton text to "No file chosen"
     }
