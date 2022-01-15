@@ -143,6 +143,7 @@ export default class Form extends Component { // Form: class component
         )
     }
 
+
     submitForm = async (e) => { //validates entry and sends data to google sheets database with temp&humid data
         if(!missingval(this.state.lat, this.state.lon, this.state.img,this.state.time, this.state.col,this.state.date)) {
             if (colourValid(this.state.col)) {
