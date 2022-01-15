@@ -66,7 +66,7 @@ app.get('/seeds', (req, res) =>{
 
 		const rows = await sheet.getRows();
 		rows.forEach(row => {
-			if(row.Latitude || row.Longitude != null) {
+			if((row.Latitude && row.Longitude) !=='') {
 				coords.push([row.Latitude, row.Longitude])
 			}
 		})

@@ -78,7 +78,7 @@ export default class App extends Component {
                 </MapContainer>
                 <div className={'horizontal'} style={{"margin-top":'1em',"margin-bottom":'1em'}}/>
                 <footer>
-                    <p> Imperial College London Bioengineering Department: A Year 3 Undergraduate Project, by ZJORD</p>
+                    <p> Imperial College London Bioengineering Department: A Year 3 Undergraduate Project, by ZJORD: version 1.5</p>
                 </footer>
             </div>
         )
